@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>APG-official</title>
+  <meta name="description" content="A curated collection of web projects, all in one place. Explore official web creations by APG.">
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Top Sticky Navigation Bar -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo" aria-label="APG-official home">
+        <span class="brand-text">APG-official</span>
+      </a>
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="about.html" class="nav-item">About</a>
+        <a href="contact.html" class="nav-item">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero & Search Section -->
+    <section class="hero-section" aria-labelledby="hero-title">
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <h1 id="hero-title" class="hero-heading">Explore Web Creations</h1>
+          <p class="hero-subtitle">A curated collection of web projects, all in one place.</p>
+        </div>
+        
+        <div class="search-wrapper">
+          <div class="search-box">
+            <svg class="search-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M9 16A7 7 0 1 0 9 2a7 7 0 0 0 0 14Zm8 2-4.35-4.35" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <input 
+              type="text" 
+              id="search-input" 
+              class="search-input" 
+              placeholder="Search websites..." 
+              autocomplete="off"
+              spellcheck="false"
+              aria-label="Search websites by title, domain, or description"
+            >
+            <button 
+              type="button" 
+              id="search-clear" 
+              class="search-clear-btn" 
+              aria-label="Clear search query"
+              hidden
+            >
+              <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section" aria-label="Website Gallery">
+      <div class="container">
+        <!-- Live Count / Active Search Info (SR Only or Screen readers) -->
+        <div id="results-count" class="visually-hidden" aria-live="polite"></div>
+
+        <!-- Cards Grid -->
+        <div id="gallery-grid" class="gallery-grid">
+          <!-- Dynamically populated by js/script.js -->
+        </div>
+
+        <!-- Empty State Container -->
+        <div id="empty-state" class="empty-state" hidden>
+          <div class="empty-state-card">
+            <div class="empty-state-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.5"/>
+                <path d="m20 20-3.5-3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M8.5 11h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h2 class="empty-state-title">No matching websites found</h2>
+            <p class="empty-state-desc">No web creations match your search query. Try a different keyword or reset the filter.</p>
+            <button type="button" id="empty-clear-btn" class="btn-clear-search">Clear search</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Minimal Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-copy">&copy; 2026 APG-official. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Gallery JavaScript -->
+  <script src="js/script.js"></script>
+</body>
+</html>
