@@ -1,13 +1,13 @@
 /**
- * APG-official — Showcase Gallery JavaScript
- * Handles dynamic rendering, responsive card generation, and live case-insensitive search.
+ * APG-official — Architectural Showcase Gallery JavaScript
+ * Handles dynamic rendering, responsive card generation, horizon backdrop split alignment, and live search.
  */
 
 'use strict';
 
 /**
  * Registry of showcase websites.
- * To add a new website to the gallery in the future, simply append a new object to this array.
+ * Real project data, URLs, and local preview screenshots preserved.
  */
 const websites = [
   {
@@ -60,6 +60,20 @@ function escapeHTML(str) {
 }
 
 /**
+ * Updates the horizon split point in CSS so the backdrop split sits
+ * cleanly behind the vertical midpoint of the project cards.
+ */
+function updateBackdropHorizon() {
+  const firstCard = document.querySelector('.gallery-grid .card');
+  if (firstCard && !firstCard.hidden && firstCard.offsetParent !== null) {
+    const rect = firstCard.getBoundingClientRect();
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const cardMidpoint = rect.top + scrollTop + (rect.height / 2);
+    document.documentElement.style.setProperty('--split-point', `${Math.round(cardMidpoint)}px`);
+  }
+}
+
+/**
  * Renders fallback UI for an image that fails to load.
  * @param {HTMLImageElement} imgElement 
  * @param {string} title 
@@ -70,7 +84,6 @@ function handleImageError(imgElement, title) {
   
   imgElement.style.display = 'none';
   
-  // Create structured fallback placeholder
   const fallback = document.createElement('div');
   fallback.className = 'card-thumbnail-fallback';
   fallback.innerHTML = `
@@ -85,7 +98,7 @@ function handleImageError(imgElement, title) {
 }
 
 /**
- * Creates an individual website card DOM element.
+ * Creates an individual architectural website card DOM element.
  * @param {Object} site 
  * @returns {HTMLElement}
  */
@@ -94,7 +107,7 @@ function createCardElement(site) {
   card.className = 'card';
   card.setAttribute('data-id', site.id);
 
-  // 16:10 Thumbnail container with clean fallback handling
+  // 1. 16:10 Aspect-ratio preview frame
   const thumbnailWrap = document.createElement('div');
   thumbnailWrap.className = 'card-thumbnail-wrap';
 
@@ -106,41 +119,46 @@ function createCardElement(site) {
   img.width = 640;
   img.height = 400;
 
-  img.onerror = function() {
+  img.onload = () => {
+    updateBackdropHorizon();
+  };
+
+  img.onerror = () => {
     handleImageError(img, site.title);
   };
 
   thumbnailWrap.appendChild(img);
   card.appendChild(thumbnailWrap);
 
-  // Card Content Body
+  // Card Body Frame
   const cardBody = document.createElement('div');
   cardBody.className = 'card-body';
 
+  // 2. Project Title
   const titleEl = document.createElement('h2');
   titleEl.className = 'card-title';
   titleEl.textContent = site.title;
   cardBody.appendChild(titleEl);
 
-  // Clean domain label
+  // 3. Domain Line with globe icon
   const domainEl = document.createElement('p');
   domainEl.className = 'card-domain';
   domainEl.innerHTML = `
     <svg class="card-domain-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.2"/>
-      <path d="M2.5 8h11M8 2a9.5 9.5 0 0 1 0 12M8 2a9.5 9.5 0 0 0 0 12" stroke="currentColor" stroke-width="1.2"/>
+      <circle cx="8" cy="8" r="6.25" stroke="currentColor" stroke-width="1.3"/>
+      <path d="M1.75 8h12.5M8 1.75a9.5 9.5 0 0 1 0 12.5M8 1.75a9.5 9.5 0 0 0 0 12.5" stroke="currentColor" stroke-width="1.3"/>
     </svg>
     <span>${escapeHTML(site.domain)}</span>
   `;
   cardBody.appendChild(domainEl);
 
-  // Concise 1-line description (clamped to max 2 lines in CSS)
+  // 4. Short Description (Clamped to 2 lines)
   const descEl = document.createElement('p');
   descEl.className = 'card-desc';
   descEl.textContent = site.description;
   cardBody.appendChild(descEl);
 
-  // Card Footer containing strictly ONE CTA button: 'Visit Website ↗'
+  // 5. CTA Button with clean arrow-up-right icon
   const cardFooter = document.createElement('div');
   cardFooter.className = 'card-footer';
 
@@ -150,7 +168,12 @@ function createCardElement(site) {
   ctaBtn.target = '_blank';
   ctaBtn.rel = 'noopener noreferrer';
   ctaBtn.setAttribute('aria-label', `Visit ${site.title} (opens in a new tab)`);
-  ctaBtn.innerHTML = `Visit Website <span class="cta-arrow" aria-hidden="true">&#x2197;</span>`;
+  ctaBtn.innerHTML = `
+    <span>Visit Website</span>
+    <svg class="cta-arrow-svg" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M4.5 11.5L11.5 4.5M11.5 4.5H5.5M11.5 4.5V10.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  `;
 
   cardFooter.appendChild(ctaBtn);
   cardBody.appendChild(cardFooter);
@@ -170,7 +193,7 @@ function renderGallery(items) {
     emptyState.hidden = false;
     galleryGrid.hidden = true;
     if (resultsCount) {
-      resultsCount.textContent = 'No websites found matching your search.';
+      resultsCount.textContent = 'No matching websites found.';
     }
   } else {
     emptyState.hidden = true;
@@ -186,6 +209,11 @@ function renderGallery(items) {
       resultsCount.textContent = `Showing ${items.length} ${items.length === 1 ? 'website' : 'websites'}.`;
     }
   }
+
+  // Update horizon split whenever cards change
+  requestAnimationFrame(() => {
+    updateBackdropHorizon();
+  });
 }
 
 /**
@@ -232,7 +260,7 @@ function resetSearch() {
  * Event Listeners Initialization
  */
 function initApp() {
-  // Initial render of all items
+  // Initial render
   renderGallery(websites);
 
   // Live search input listener
@@ -255,6 +283,14 @@ function initApp() {
     if (e.key === 'Escape' && searchInput.value) {
       resetSearch();
     }
+  });
+
+  // Keep horizon split aligned on window resize & orientation change
+  window.addEventListener('resize', () => {
+    updateBackdropHorizon();
+  });
+  window.addEventListener('orientationchange', () => {
+    updateBackdropHorizon();
   });
 }
 

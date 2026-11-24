@@ -6,7 +6,7 @@
   <title>About — APG-official</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -16,7 +16,8 @@
         <span class="brand-text">APG-official</span>
       </a>
       <nav class="nav-links" aria-label="Main Navigation">
-        <a href="../about/" class="nav-item" style="color: var(--text-primary); background-color: rgba(58, 90, 128, 0.2);">About</a>
+        <a href="../about/" class="nav-item" style="color: var(--text-nav-hover); font-weight: 600;">About</a>
+        <span class="nav-separator" aria-hidden="true">&bull;</span>
         <a href="../contact/" class="nav-item">Contact</a>
       </nav>
     </div>
@@ -24,21 +25,24 @@
 
   <main>
     <section class="hero-section">
-      <div class="container" style="max-width: 800px; padding-top: 24px; padding-bottom: 60px;">
-        <h1 class="hero-heading" style="margin-bottom: 16px;">About APG-official</h1>
-        <p class="hero-subtitle" style="margin-bottom: 28px; font-size: 1.1rem; line-height: 1.6;">
-          APG-official is a dedicated showcase of modern, high-performance web applications and interactive digital experiences.
+      <div class="container" style="max-width: 820px; padding-top: 36px; padding-bottom: 72px;">
+        <h1 class="hero-heading" style="margin-bottom: 12px; font-size: clamp(2.2rem, 3.5vw, 2.8rem);">About APG-official</h1>
+        <p class="hero-subtitle" style="margin-bottom: 32px; font-size: 1.05rem; line-height: 1.5;">
+          A curated collection of web projects, all in one place.
         </p>
-        <div style="background-color: var(--surface-card); border: 1px solid var(--slate-steel-border); border-radius: var(--radius-card); padding: 32px; color: var(--text-secondary); line-height: 1.7;">
-          <p style="margin-bottom: 16px;">
-            Every project in this collection is crafted with attention to performance, usability, and refined aesthetics. From interactive greeting platforms to global entertainment discovery hubs and visual prompt galleries, our work represents clean digital craftsmanship.
+        <div class="card" style="padding: 32px; border-radius: 20px;">
+          <h2 class="card-title" style="margin-bottom: 14px; font-size: 1.35rem;">Architectural Web Craftsmanship</h2>
+          <p style="color: var(--text-body); font-size: 0.95rem; line-height: 1.65; margin-bottom: 18px;">
+            APG-official showcases high-performance, focused web applications built with pure web technologies. Each project represents clean engineering, responsive typography, and composed visual hierarchy.
           </p>
-          <p style="margin-bottom: 24px;">
-            This showcase is built using pure vanilla web technologies adhering to strict performance, accessibility, and architectural standards.
+          <p style="color: var(--text-body); font-size: 0.95rem; line-height: 1.65; margin-bottom: 28px;">
+            From interactive digital surprises and entertainment discovery hubs to AI prompt visualizers, every creation is developed to deliver speed, accessibility, and utility.
           </p>
-          <a href="index.html" class="card-cta" style="width: auto; display: inline-flex; padding: 10px 20px;">
-            &larr; Back to Showcase
-          </a>
+          <div>
+            <a href="../index.html" class="card-cta" style="width: auto; display: inline-flex; padding: 0 24px; min-width: 180px;">
+              <span>&larr; Back to Showcase</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
