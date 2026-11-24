@@ -1,66 +1,41 @@
 /* ==========================================================================
-   APG-official — Flat, Matte Architectural Portfolio
-   Warm Stone-Gray & Deep Charcoal Palette
-   Strictly NO neon, NO glowing effects, NO colorful gradients
+   APG-official — Executive Statesman Navy & Copper Showcase Gallery
+   Strictly no neon, no glowing borders, no harsh shadows, no flashy animations
    ========================================================================== */
 
-/* --- Architectural Design Tokens --- */
+/* --- Design Tokens & Palette --- */
 :root {
-  /* Architectural Stone & Charcoal Palette */
-  --stone-light: #cbc7bf;
-  --stone-mid: #9d988f;
-  --taupe-mid: #99948b;
-  --charcoal-deep: #353330;
+  /* Exact Specified Palette */
+  --bg-navy: #0B1F3A;          /* Primary Deep Navy background */
+  --surface-card: #112746;     /* Elevated matte card surface */
+  --text-primary: #E9EEF3;     /* Cool Porcelain — headings, titles, brand */
+  --text-secondary: #C9D3DD;   /* Pale Steel — subtitles, descriptions, domains */
+  --slate-steel: #3A5A80;      /* Slate Steel — hairline borders, input outlines */
+  --accent-copper: #B5653A;    /* Copper — primary action buttons & accents */
 
-  /* Typography Colors */
-  --text-headline: #171716;
-  --text-title: #111111;
-  --text-subtitle: #484642;
-  --text-body: #242629;
-  --text-domain: #5a5e64;
-  --text-footer: #1c1b19;
-  --text-nav: #2c2b28;
-  --text-nav-hover: #000000;
+  /* Derived Tonal States (Matte & Composed) */
+  --bg-gradient-top: #0F2746;
+  --bg-gradient-bottom: #081628;
+  --surface-card-hover: #142F53;
+  --surface-card-subtle: #0E223D;
+  --slate-steel-border: rgba(58, 90, 128, 0.35);
+  --slate-steel-hover: rgba(58, 90, 128, 0.65);
+  --accent-copper-hover: #C67448;
+  --accent-copper-active: #9E532C;
 
-  /* Card Surfaces & Multi-Layer Drop Shadows */
-  --card-bg: linear-gradient(180deg, #f3f4f6 0%, #dfe2e6 100%);
-  --card-border: rgba(255, 255, 255, 0.65);
-  --card-shadow: 0 22px 45px rgba(0, 0, 0, 0.22), 0 4px 12px rgba(0, 0, 0, 0.08);
-  --card-shadow-hover: 0 28px 55px rgba(0, 0, 0, 0.26), 0 6px 16px rgba(0, 0, 0, 0.1);
-
-  /* Button Styles */
-  --btn-bg: #1a1a1a;
-  --btn-bg-hover: #2c2c2c;
-  --btn-text: #ffffff;
-
-  /* Search Input */
-  --search-bg: rgba(255, 255, 255, 0.24);
-  --search-border: rgba(255, 255, 255, 0.42);
-  --search-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-  --search-placeholder: #4e4c48;
-  --search-text: #141414;
-
-  /* Hairline Dividers */
-  --divider-header: rgba(0, 0, 0, 0.12);
-  --divider-footer: rgba(0, 0, 0, 0.14);
-
-  /* Apple / SF Pro inspired sans-serif font stack */
-  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-
+  /* Typography */
+  --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  
   /* Layout Metrics */
   --max-width: 1200px;
   --container-padding: 24px;
-  --radius-card: 20px;
-  --radius-preview: 12px;
-  --radius-button: 10px;
-  --radius-input: 10px;
+  --radius-card: 10px;
+  --radius-button: 6px;
+  --radius-input: 8px;
 
-  /* Dynamic or fallback vertical horizon split behind middle of cards */
-  --split-point: 470px;
-
-  /* Transitions */
+  /* Subtle Transitions (No Flashy Animations) */
   --transition-fast: 0.15s ease;
-  --transition-smooth: 0.22s ease;
+  --transition-normal: 0.22s ease-in-out;
 }
 
 /* --- Base & Reset --- */
@@ -77,30 +52,17 @@ html {
 }
 
 body {
-  font-family: var(--font-sans);
-  color: var(--text-headline);
+  font-family: var(--font-family);
+  background-color: var(--bg-navy);
+  background-image: radial-gradient(circle at 50% -10%, var(--bg-gradient-top) 0%, var(--bg-navy) 60%, var(--bg-gradient-bottom) 100%);
+  background-attachment: fixed;
+  color: var(--text-primary);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  /* Split Matte Architectural Backdrop:
-     Upper: subtle matte warm stone-gray gradient (#cbc7bf -> #9d988f)
-     Lower: deeper matte warm taupe-charcoal gradient (#99948b -> #353330)
-     with a crisp horizontal horizon split behind the middle of the cards */
-  background-image: 
-    linear-gradient(90deg, #cbc7bf 0%, #9d988f 100%),
-    linear-gradient(90deg, #99948b 0%, #353330 100%);
-  background-position: 
-    top left,
-    0 var(--split-point, 470px);
-  background-size: 
-    100% var(--split-point, 470px),
-    100% 100%;
-  background-repeat: no-repeat;
-  background-color: var(--charcoal-deep);
 }
 
 main {
@@ -122,9 +84,9 @@ a {
   text-decoration: none;
 }
 
-/* Clean, non-neon accessible keyboard focus */
+/* Accessibility Focus States */
 :focus-visible {
-  outline: 2px solid #1a1a1a;
+  outline: 2px solid var(--accent-copper);
   outline-offset: 2px;
 }
 
@@ -154,11 +116,15 @@ a {
   padding-right: var(--container-padding);
 }
 
-/* --- Top Navigation Bar --- */
+/* --- Top Navigation Bar (Sticky, Minimal) --- */
 .site-header {
-  width: 100%;
-  border-bottom: 1px solid var(--divider-header);
-  background-color: transparent;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(11, 31, 58, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--slate-steel-border);
 }
 
 .header-inner {
@@ -171,19 +137,20 @@ a {
 .brand-logo {
   display: inline-flex;
   align-items: center;
+  gap: 8px;
   text-decoration: none;
   transition: opacity var(--transition-fast);
 }
 
 .brand-logo:hover {
-  opacity: 0.85;
+  opacity: 0.9;
 }
 
 .brand-text {
   font-size: 1.18rem;
   font-weight: 700;
-  letter-spacing: -0.025em;
-  color: var(--text-title);
+  letter-spacing: -0.015em;
+  color: var(--text-primary);
 }
 
 .nav-links {
@@ -193,29 +160,29 @@ a {
 }
 
 .nav-item {
-  font-size: 0.92rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 0 16px;
+  font-size: 0.88rem;
   font-weight: 500;
-  color: var(--text-nav);
-  text-decoration: none;
-  transition: color var(--transition-fast);
-  padding: 4px 0;
+  color: var(--text-secondary);
+  border-radius: var(--radius-button);
+  border: 1px solid transparent;
+  transition: color var(--transition-fast), border-color var(--transition-fast), background-color var(--transition-fast);
 }
 
 .nav-item:hover {
-  color: var(--text-nav-hover);
-}
-
-.nav-separator {
-  color: rgba(0, 0, 0, 0.35);
-  font-size: 0.75rem;
-  user-select: none;
-  line-height: 1;
+  color: var(--text-primary);
+  background-color: rgba(58, 90, 128, 0.15);
+  border-color: rgba(58, 90, 128, 0.3);
 }
 
 /* --- Hero & Search Header Section --- */
 .hero-section {
-  padding-top: 52px;
-  padding-bottom: 36px;
+  padding-top: 56px;
+  padding-bottom: 32px;
 }
 
 .hero-inner {
@@ -230,24 +197,23 @@ a {
 }
 
 .hero-heading {
-  font-size: clamp(2.2rem, 3.8vw, 3rem);
+  font-size: 2.25rem;
   font-weight: 700;
-  color: var(--text-headline);
-  line-height: 1.1;
-  letter-spacing: -0.035em;
+  color: var(--text-primary);
+  letter-spacing: -0.025em;
+  line-height: 1.18;
 }
 
 .hero-subtitle {
   margin-top: 8px;
   font-size: 1.05rem;
   font-weight: 400;
-  color: var(--text-subtitle);
-  line-height: 1.45;
+  color: var(--text-secondary);
+  line-height: 1.5;
 }
 
-/* Compact Matte Search Input */
 .search-wrapper {
-  flex: 0 0 310px;
+  flex: 0 0 340px;
   max-width: 100%;
 }
 
@@ -263,41 +229,41 @@ a {
   left: 14px;
   width: 18px;
   height: 18px;
-  color: var(--search-placeholder);
+  color: var(--slate-steel);
   pointer-events: none;
+  transition: color var(--transition-fast);
 }
 
 .search-input {
   width: 100%;
   height: 44px;
-  padding: 0 38px 0 42px;
+  padding: 0 40px 0 42px;
   font-size: 0.92rem;
-  font-weight: 400;
-  color: var(--search-text);
-  background-color: var(--search-bg);
-  border: 1px solid var(--search-border);
+  color: var(--text-primary);
+  background-color: var(--surface-card);
+  border: 1px solid var(--slate-steel-border);
   border-radius: var(--radius-input);
-  box-shadow: var(--search-shadow);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  transition: background-color var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+  transition: border-color var(--transition-fast), background-color var(--transition-fast);
 }
 
 .search-input::placeholder {
-  color: var(--search-placeholder);
-  opacity: 0.85;
+  color: var(--text-secondary);
+  opacity: 0.65;
 }
 
 .search-input:hover {
-  background-color: rgba(255, 255, 255, 0.32);
-  border-color: rgba(255, 255, 255, 0.55);
+  border-color: var(--slate-steel-hover);
 }
 
 .search-input:focus {
   outline: none;
-  background-color: rgba(255, 255, 255, 0.4);
-  border-color: rgba(0, 0, 0, 0.25);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  background-color: var(--surface-card-hover);
+  border-color: var(--slate-steel);
+  box-shadow: 0 0 0 1px var(--slate-steel);
+}
+
+.search-input:focus ~ .search-icon {
+  color: var(--text-secondary);
 }
 
 .search-clear-btn {
@@ -310,8 +276,8 @@ a {
   justify-content: center;
   background: transparent;
   border: none;
-  border-radius: 6px;
-  color: var(--search-placeholder);
+  border-radius: 4px;
+  color: var(--text-secondary);
   cursor: pointer;
   padding: 0;
   transition: color var(--transition-fast), background-color var(--transition-fast);
@@ -323,50 +289,48 @@ a {
 }
 
 .search-clear-btn:hover {
-  color: var(--text-headline);
-  background-color: rgba(0, 0, 0, 0.08);
+  color: var(--text-primary);
+  background-color: rgba(58, 90, 128, 0.25);
 }
 
 /* --- Gallery Grid Section --- */
 .gallery-section {
   padding-top: 12px;
-  padding-bottom: 84px;
+  padding-bottom: 72px;
 }
 
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-  align-items: stretch; /* Cards stretch to equal height */
+  gap: 24px;
+  align-items: stretch; /* Cards stretch to equal height in each row */
 }
 
-/* --- Architectural Card Component --- */
+/* --- Website Card Component --- */
 .card {
   display: flex;
   flex-direction: column;
   height: 100%;
-  background-image: var(--card-bg);
-  border: 1px solid var(--card-border);
+  background-color: var(--surface-card);
+  border: 1px solid var(--slate-steel-border);
   border-radius: var(--radius-card);
-  box-shadow: var(--card-shadow);
-  padding: 12px; /* 12px outer frame around preview image */
   overflow: hidden;
-  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+  transition: border-color var(--transition-normal), background-color var(--transition-normal);
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--card-shadow-hover);
+  background-color: var(--surface-card-hover);
+  border-color: var(--slate-steel-hover);
 }
 
-/* 16:10 Thumbnail Preview Container */
+/* Thumbnail 16:10 Container */
 .card-thumbnail-wrap {
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 10;
-  border-radius: var(--radius-preview);
   overflow: hidden;
-  background-color: #d8dbdf;
+  background-color: var(--surface-card-subtle);
+  border-bottom: 1px solid var(--slate-steel-border);
 }
 
 .card-thumbnail {
@@ -375,6 +339,11 @@ a {
   object-fit: cover;
   object-position: top center;
   display: block;
+  transition: transform 0.28s ease;
+}
+
+.card:hover .card-thumbnail {
+  transform: scale(1.02);
 }
 
 /* Fallback preview placeholder when image fails */
@@ -386,8 +355,8 @@ a {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: #d8dbdf;
-  color: var(--text-subtitle);
+  background: linear-gradient(135deg, #0e223d 0%, #15335b 100%);
+  color: var(--text-secondary);
   font-size: 0.85rem;
   letter-spacing: 0.02em;
   text-align: center;
@@ -405,45 +374,44 @@ a {
   display: flex;
   flex-direction: column;
   flex: 1 0 auto;
-  padding: 18px 10px 8px 10px; /* ~22px total horizontal padding with card's 12px padding */
+  padding: 22px 22px 20px;
 }
 
 .card-title {
-  font-size: 1.28rem;
-  font-weight: 700;
-  color: var(--text-title);
-  line-height: 1.25;
-  letter-spacing: -0.025em;
+  font-size: 1.18rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.3;
+  letter-spacing: -0.015em;
   margin-bottom: 4px;
 }
 
-/* Domain Line */
 .card-domain {
-  font-size: 0.82rem;
-  color: var(--text-domain);
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+  opacity: 0.85;
   font-weight: 500;
   letter-spacing: 0.01em;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   margin-bottom: 12px;
 }
 
 .card-domain-icon {
-  width: 13px;
-  height: 13px;
+  width: 12px;
+  height: 12px;
+  opacity: 0.6;
   flex-shrink: 0;
-  color: var(--text-domain);
 }
 
-/* Short Description (Clamped to 2 lines max) */
 .card-desc {
-  font-size: 0.9rem;
-  line-height: 1.5;
-  color: var(--text-body);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--text-secondary);
   margin-bottom: 22px;
   
-  /* Strictly clamped to 2 lines max with ellipsis */
+  /* Strictly clamped to 2 lines max so cards stay uniform */
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -451,46 +419,48 @@ a {
   text-overflow: ellipsis;
 }
 
-/* Card Footer & Full-Width CTA Button */
+/* Card Footer & Action CTA */
 .card-footer {
-  margin-top: auto; /* Pushes button strictly to bottom horizontal baseline */
+  margin-top: auto; /* Pushes button strictly to bottom baseline */
 }
 
 .card-cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
   width: 100%;
-  height: 44px;
-  padding: 0 16px;
-  font-size: 0.9rem;
+  min-height: 42px;
+  padding: 10px 16px;
+  font-size: 0.88rem;
   font-weight: 600;
-  color: var(--btn-text);
-  background-color: var(--btn-bg);
+  letter-spacing: 0.01em;
+  color: var(--text-primary);
+  background-color: var(--accent-copper);
   border: 1px solid transparent;
   border-radius: var(--radius-button);
   text-decoration: none;
   cursor: pointer;
-  transition: background-color var(--transition-fast), transform var(--transition-fast);
+  transition: background-color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
 }
 
 .card-cta:hover {
-  background-color: var(--btn-bg-hover);
+  background-color: var(--accent-copper-hover);
 }
 
 .card-cta:active {
-  transform: scale(0.99);
+  background-color: var(--accent-copper-active);
 }
 
-.cta-arrow-svg {
-  width: 14px;
-  height: 14px;
+.cta-arrow {
+  margin-left: 6px;
+  font-size: 1.05rem;
+  line-height: 1;
+  display: inline-block;
   transition: transform var(--transition-fast);
 }
 
-.card-cta:hover .cta-arrow-svg {
-  transform: translate(1px, -1px);
+.card-cta:hover .cta-arrow {
+  transform: translate(2px, -2px);
 }
 
 /* --- Empty Search State --- */
@@ -503,71 +473,66 @@ a {
   margin: 0 auto;
   text-align: center;
   padding: 40px 28px;
-  background-image: var(--card-bg);
-  border: 1px solid var(--card-border);
+  background-color: var(--surface-card);
+  border: 1px solid var(--slate-steel-border);
   border-radius: var(--radius-card);
-  box-shadow: var(--card-shadow);
 }
 
 .empty-state-icon {
-  width: 44px;
-  height: 44px;
+  width: 48px;
+  height: 48px;
   margin: 0 auto 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-subtitle);
+  color: var(--slate-steel);
 }
 
 .empty-state-icon svg {
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
 }
 
 .empty-state-title {
-  font-size: 1.18rem;
-  font-weight: 700;
-  color: var(--text-title);
-  letter-spacing: -0.02em;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-primary);
   margin-bottom: 8px;
 }
 
 .empty-state-desc {
   font-size: 0.9rem;
-  color: var(--text-subtitle);
+  color: var(--text-secondary);
   line-height: 1.5;
-  margin-bottom: 22px;
+  margin-bottom: 20px;
 }
 
 .btn-clear-search {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 42px;
-  padding: 0 22px;
+  min-height: 38px;
+  padding: 0 18px;
   font-size: 0.88rem;
   font-weight: 600;
-  color: var(--btn-text);
-  background-color: var(--btn-bg);
-  border: 1px solid transparent;
+  color: var(--text-primary);
+  background-color: transparent;
+  border: 1px solid var(--slate-steel);
   border-radius: var(--radius-button);
   cursor: pointer;
-  transition: background-color var(--transition-fast), transform var(--transition-fast);
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
 }
 
 .btn-clear-search:hover {
-  background-color: var(--btn-bg-hover);
-}
-
-.btn-clear-search:active {
-  transform: scale(0.99);
+  background-color: rgba(58, 90, 128, 0.25);
+  border-color: var(--text-secondary);
 }
 
 /* --- Minimal Footer --- */
 .site-footer {
   margin-top: auto;
-  border-top: 1px solid var(--divider-footer);
-  background-color: transparent;
+  border-top: 1px solid var(--slate-steel-border);
+  background-color: rgba(11, 31, 58, 0.6);
 }
 
 .footer-inner {
@@ -578,9 +543,9 @@ a {
 }
 
 .footer-copy {
-  font-size: 0.82rem;
-  font-weight: 500;
-  color: var(--text-footer);
+  font-size: 0.86rem;
+  color: var(--text-secondary);
+  opacity: 0.8;
   letter-spacing: 0.01em;
 }
 
@@ -594,17 +559,21 @@ a {
 /* Tablet (640px – 1023px) */
 @media (max-width: 1023px) {
   .hero-section {
-    padding-top: 42px;
+    padding-top: 44px;
     padding-bottom: 28px;
+  }
+
+  .hero-heading {
+    font-size: 2rem;
   }
 
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+    gap: 20px;
   }
 
   .search-wrapper {
-    flex: 0 0 280px;
+    flex: 0 0 300px;
   }
 }
 
@@ -630,12 +599,12 @@ a {
   }
 
   .hero-heading {
-    font-size: 1.85rem;
-    line-height: 1.15;
+    font-size: 1.7rem;
+    line-height: 1.22;
   }
 
   .hero-subtitle {
-    font-size: 0.96rem;
+    font-size: 0.95rem;
   }
 
   .search-wrapper {
@@ -645,19 +614,27 @@ a {
 
   .gallery-section {
     padding-top: 8px;
-    padding-bottom: 56px;
+    padding-bottom: 48px;
   }
 
   .gallery-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 18px;
+  }
+
+  .card-body {
+    padding: 18px 18px 18px;
   }
 
   .card-cta {
-    height: 44px; /* Touch target */
+    min-height: 44px; /* Comfortable mobile touch target */
   }
 
   .footer-inner {
     height: 56px;
+  }
+
+  .footer-copy {
+    font-size: 0.82rem;
   }
 }
