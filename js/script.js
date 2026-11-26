@@ -122,18 +122,6 @@ function createCardElement(site) {
   titleEl.textContent = site.title;
   cardBody.appendChild(titleEl);
 
-  // Clean domain label
-  const domainEl = document.createElement('p');
-  domainEl.className = 'card-domain';
-  domainEl.innerHTML = `
-    <svg class="card-domain-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.2"/>
-      <path d="M2.5 8h11M8 2a9.5 9.5 0 0 1 0 12M8 2a9.5 9.5 0 0 0 0 12" stroke="currentColor" stroke-width="1.2"/>
-    </svg>
-    <span>${escapeHTML(site.domain)}</span>
-  `;
-  cardBody.appendChild(domainEl);
-
   // Concise 1-line description (clamped to max 2 lines in CSS)
   const descEl = document.createElement('p');
   descEl.className = 'card-desc';

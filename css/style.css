@@ -821,25 +821,7 @@ a {
   color: var(--text-primary);
   line-height: 1.25;
   letter-spacing: -0.015em;
-  margin-bottom: 4px;
-}
-
-.card-domain {
-  font-size: 0.84rem;
-  color: var(--sand-gold);
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  margin-bottom: 10px;
-}
-
-.card-domain-icon {
-  width: 13px;
-  height: 13px;
-  color: var(--sand-gold);
-  flex-shrink: 0;
+  margin-bottom: 8px;
 }
 
 .card-desc {
@@ -1145,18 +1127,7 @@ a {
 
   .card-title {
     font-size: 1.05rem;
-    margin-bottom: 2px;
-  }
-
-  .card-domain {
-    font-size: 0.72rem;
-    gap: 3px;
     margin-bottom: 6px;
-  }
-
-  .card-domain-icon {
-    width: 11px;
-    height: 11px;
   }
 
   .card-desc {
