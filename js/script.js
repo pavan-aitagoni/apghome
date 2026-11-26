@@ -217,9 +217,65 @@ function resetSearch() {
 }
 
 /**
- * Event Listeners Initialization
+ * Navigation Hamburger Menu Initialization (Tablet & Mobile)
  */
-function initApp() {
+function initNavigation() {
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+  const mainNav = document.getElementById('main-nav');
+  if (!hamburgerBtn || !mainNav) return;
+
+  function toggleMenu() {
+    const isExpanded = hamburgerBtn.getAttribute('aria-expanded') === 'true';
+    hamburgerBtn.setAttribute('aria-expanded', String(!isExpanded));
+    mainNav.classList.toggle('is-open', !isExpanded);
+  }
+
+  function closeMenu() {
+    hamburgerBtn.setAttribute('aria-expanded', 'false');
+    mainNav.classList.remove('is-open');
+  }
+
+  hamburgerBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleMenu();
+  });
+
+  // Close when clicking nav items
+  mainNav.querySelectorAll('.nav-item').forEach((link) => {
+    link.addEventListener('click', () => {
+      closeMenu();
+    });
+  });
+
+  // Close when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!mainNav.contains(e.target) && !hamburgerBtn.contains(e.target)) {
+      closeMenu();
+    }
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mainNav.classList.contains('is-open')) {
+      closeMenu();
+      hamburgerBtn.focus();
+    }
+  });
+
+  // Close menu if resized above tablet breakpoint
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 1024) {
+      closeMenu();
+    }
+  });
+}
+
+/**
+ * Gallery and Search Event Listeners Initialization
+ */
+function initGallery() {
+  if (!galleryGrid || !searchInput) return;
+
   // Initial render of all items
   renderGallery(websites);
 
@@ -229,14 +285,18 @@ function initApp() {
   });
 
   // Clear button inside search input
-  searchClearBtn.addEventListener('click', () => {
-    resetSearch();
-  });
+  if (searchClearBtn) {
+    searchClearBtn.addEventListener('click', () => {
+      resetSearch();
+    });
+  }
 
   // Clear button in empty state card
-  emptyClearBtn.addEventListener('click', () => {
-    resetSearch();
-  });
+  if (emptyClearBtn) {
+    emptyClearBtn.addEventListener('click', () => {
+      resetSearch();
+    });
+  }
 
   // Allow Esc key to quickly clear search input
   searchInput.addEventListener('keydown', (e) => {
@@ -244,6 +304,14 @@ function initApp() {
       resetSearch();
     }
   });
+}
+
+/**
+ * Application Bootstrap
+ */
+function initApp() {
+  initNavigation();
+  initGallery();
 }
 
 // Bootstrap on DOM ready
