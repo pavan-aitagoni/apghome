@@ -432,70 +432,186 @@ a {
 }
 
 /* ==========================================================================
-   Core Pillars Banner (Middle Capsule from Mockup)
+   Dedicated Pages (About & Contact — Botanical Luxury Theme)
    ========================================================================== */
-.pillars-section {
-  padding: 10px 0 48px;
+.page-hero {
+  padding-top: 50px;
+  padding-bottom: 80px;
   background-color: var(--forest-deep);
 }
 
-.pillars-capsule {
-  background: rgba(22, 57, 43, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+.page-container {
+  max-width: 860px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-card {
+  background: linear-gradient(165deg, rgba(22, 57, 43, 0.88) 0%, rgba(15, 40, 30, 0.96) 100%);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border: 1px solid rgba(223, 191, 153, 0.22);
-  border-radius: 28px;
-  padding: 34px 38px;
+  border-radius: 24px;
+  padding: 44px 40px;
+  box-shadow: var(--shadow-card);
+}
+
+.page-title {
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+
+.page-subtitle {
+  font-size: 1.1rem;
+  color: var(--sand-gold);
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+.page-body-text {
+  font-size: 1.02rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+/* About Platforms Mini-Cards */
+.platform-mini-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 28px;
-  box-shadow: 0 20px 48px rgba(4, 14, 9, 0.45);
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 24px;
+  margin-bottom: 32px;
 }
 
-.pillar-item {
+.platform-mini-card {
+  padding: 18px 22px;
+  border-radius: 16px;
+  border: 1px solid rgba(223, 191, 153, 0.2);
   display: flex;
-  flex-direction: column;
   align-items: center;
-  text-align: center;
+  justify-content: space-between;
+  gap: 18px;
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
 }
 
-.pillar-icon-wrap {
-  width: 52px;
-  height: 52px;
+.platform-mini-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--sand-gold);
+}
+
+.platform-mini-card.card-urjoydrop {
+  background: linear-gradient(165deg, #244C39 0%, #173627 100%);
+}
+
+.platform-mini-card.card-cineportal {
+  background: linear-gradient(165deg, #4E2C1E 0%, #351C12 100%);
+}
+
+.platform-mini-card.card-promp-ts {
+  background: linear-gradient(165deg, #5C402B 0%, #402A1A 100%);
+}
+
+.platform-mini-info h3 {
+  font-family: var(--font-display);
+  font-size: 1.18rem;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.platform-mini-info p {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+.platform-mini-link {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 18px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--btn-sand-text);
+  background: var(--btn-sand-gradient);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.platform-mini-link:hover {
+  background: var(--btn-sand-hover);
+  transform: translateY(-1px);
+}
+
+/* Contact List & Info Cards */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-top: 24px;
+  margin-bottom: 32px;
+}
+
+.contact-card-item {
+  background: rgba(15, 40, 30, 0.6);
+  border: 1px solid rgba(223, 191, 153, 0.2);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  transition: border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.contact-card-item:hover {
+  border-color: var(--sand-gold);
+  transform: translateY(-2px);
+}
+
+.contact-icon-bubble {
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
+  background: rgba(223, 191, 153, 0.12);
+  border: 1px solid rgba(223, 191, 153, 0.3);
+  color: var(--sand-gold);
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(223, 191, 153, 0.12);
-  border: 1.5px solid rgba(223, 191, 153, 0.35);
-  color: var(--sand-gold);
-  margin-bottom: 14px;
-  transition: transform var(--transition-fast), background var(--transition-fast);
+  flex-shrink: 0;
 }
 
-.pillar-item:hover .pillar-icon-wrap {
-  transform: translateY(-2px);
-  background: rgba(223, 191, 153, 0.22);
+.contact-icon-bubble svg {
+  width: 20px;
+  height: 20px;
 }
 
-.pillar-icon {
-  width: 24px;
-  height: 24px;
-}
-
-.pillar-title {
-  font-family: var(--font-display);
-  font-size: 1.05rem;
+.contact-detail-label {
+  font-size: 0.78rem;
   font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--sand-gold);
+  margin-bottom: 4px;
 }
 
-.pillar-desc {
-  font-size: 0.82rem;
-  color: var(--text-secondary);
-  line-height: 1.45;
-  max-width: 230px;
+.contact-detail-val {
+  font-size: 0.96rem;
+  color: var(--text-primary);
+  font-weight: 500;
+  word-break: break-all;
+}
+
+.contact-detail-val a:hover {
+  color: var(--sand-gold);
+  text-decoration: underline;
 }
 
 /* ==========================================================================
@@ -901,12 +1017,6 @@ a {
     font-size: 2.8rem;
   }
 
-  .pillars-capsule {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-    padding: 28px;
-  }
-
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
@@ -962,36 +1072,29 @@ a {
     margin-bottom: 24px;
   }
 
-  .pillars-section {
-    padding: 0 0 32px;
+  .page-hero {
+    padding-top: 32px;
+    padding-bottom: 60px;
   }
 
-  .pillars-capsule {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-    padding: 20px 14px;
+  .page-card {
+    padding: 26px 18px;
     border-radius: 20px;
   }
 
-  .pillar-icon-wrap {
-    width: 44px;
-    height: 44px;
-    margin-bottom: 8px;
+  .page-title {
+    font-size: 2.1rem;
   }
 
-  .pillar-icon {
-    width: 20px;
-    height: 20px;
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
 
-  .pillar-title {
-    font-size: 0.88rem;
-    margin-bottom: 3px;
-  }
-
-  .pillar-desc {
-    font-size: 0.72rem;
-    line-height: 1.35;
+  .platform-mini-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
   }
 
   .gallery-section {

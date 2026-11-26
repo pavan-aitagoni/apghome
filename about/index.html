@@ -4,63 +4,96 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About — APG-official</title>
+  <meta name="description" content="Learn about APG-official and our curated suite of modern web applications.">
+  
+  <!-- Google Fonts: Plus Jakarta Sans, Playfair Display, and Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="../css/style.css">
 </head>
-<body class="skybloom-theme">
+<body class="botanical-theme">
+
+  <!-- Top Sticky Navigation Bar -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="../index.html" class="brand-logo" aria-label="APG-official home">
-        <svg class="brand-flower-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <circle cx="12" cy="12" r="3" fill="#5DA9FF"/>
-          <ellipse cx="12" cy="5" rx="2.5" ry="4" fill="#2B6CB0" opacity="0.85"/>
-          <ellipse cx="12" cy="19" rx="2.5" ry="4" fill="#2B6CB0" opacity="0.85"/>
-          <ellipse cx="5" cy="12" rx="4" ry="2.5" fill="#2B6CB0" opacity="0.85"/>
-          <ellipse cx="19" cy="12" rx="4" ry="2.5" fill="#2B6CB0" opacity="0.85"/>
-          <circle cx="7" cy="7" r="2.5" fill="#5DA9FF" opacity="0.75"/>
-          <circle cx="17" cy="7" r="2.5" fill="#5DA9FF" opacity="0.75"/>
-          <circle cx="7" cy="17" r="2.5" fill="#5DA9FF" opacity="0.75"/>
-          <circle cx="17" cy="17" r="2.5" fill="#5DA9FF" opacity="0.75"/>
+        <svg class="brand-leaf-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M12 2C6.48 2 2 6.48 2 12c0 5.52 4.48 10 10 10 3.86 0 7.21-2.19 8.91-5.41L12 12V2z" fill="#4B8B67" opacity="0.9"/>
+          <path d="M12 2c5.52 0 10 4.48 10 10 0 1.64-.4 3.19-1.09 4.59L12 12V2z" fill="#D4AF83"/>
+          <path d="M12 12l8.91 4.59C19.78 19.38 16.14 22 12 22v-10z" fill="#2E5C42"/>
         </svg>
         <span class="brand-text">APG-official</span>
       </a>
+
       <nav class="nav-links" aria-label="Main Navigation">
         <a href="../index.html" class="nav-item">Home</a>
         <a href="../index.html#gallery" class="nav-item">Projects</a>
         <a href="../about/" class="nav-item active">About</a>
         <a href="../contact/" class="nav-item">Contact</a>
       </nav>
+
       <div class="header-action">
         <a href="../contact/" class="btn-connect">Let's Connect &#x2197;</a>
       </div>
     </div>
   </header>
 
+  <!-- Main Content Canvas -->
   <main>
-    <section class="story-section" style="padding-top: 70px; padding-bottom: 90px;">
-      <div class="container" style="max-width: 820px;">
-        <div class="section-eyebrow">ABOUT THE PLATFORM</div>
-        <h1 class="story-heading" style="font-size: 3rem; margin-bottom: 16px;">
-          Crafting Purposeful Web Experiences
-        </h1>
-        <p class="story-desc" style="font-size: 1.15rem; color: var(--sky-deep); margin-bottom: 28px;">
-          A curated ecosystem of live web applications engineered for speed, utility, and delight.
-        </p>
-        
-        <div style="background: #FFFFFF; border: 1px solid var(--border-card); border-radius: var(--radius-card); padding: 36px; box-shadow: var(--shadow-card); line-height: 1.8;">
-          <p style="margin-bottom: 18px; color: var(--text-body); font-size: 1.05rem;">
-            <strong>APG-official</strong> brings together an official suite of modern, high-performance web applications. Each project addresses a distinct digital experience:
+    <section class="page-hero" aria-labelledby="about-title">
+      <div class="container page-container">
+        <div class="page-card">
+          <div class="section-eyebrow">ABOUT THE PLATFORM</div>
+          <h1 id="about-title" class="page-title">
+            Crafting Purposeful Web Experiences
+          </h1>
+          <p class="page-subtitle">
+            A curated ecosystem of live web applications engineered for speed, utility, and delight.
           </p>
-          <ul style="margin-left: 20px; margin-bottom: 22px; color: var(--text-body); font-size: 1.02rem; line-height: 1.8;">
-            <li><strong>URjoydrop</strong>: Personalized interactive celebration and greeting experiences that make sharing joy effortless.</li>
-            <li><strong>cineportal</strong>: A global discovery hub organizing cinema, anime, manga, and streaming platforms worldwide.</li>
-            <li><strong>promp-ts</strong>: A visual discovery gallery curating AI prompt aesthetics, creative reel modes, and artistic styles.</li>
-          </ul>
-          <p style="margin-bottom: 28px; color: var(--text-body); font-size: 1.05rem;">
-            Built with pure modern web technologies, our focus is on responsiveness, intuitive navigation, and clean design.
+
+          <p class="page-body-text">
+            <strong>APG-official</strong> serves as the central showcase for specialized, high-performance web creations. Each platform addresses a distinct digital space with clean aesthetics and pure framework-free execution:
           </p>
+
+          <!-- Tri-Color Platform Mini-Cards -->
+          <div class="platform-mini-grid">
+            <div class="platform-mini-card card-urjoydrop">
+              <div class="platform-mini-info">
+                <h3>URjoydrop</h3>
+                <p>Personalized celebratory greetings, interactive surprises, and effortless digital delight for special moments.</p>
+              </div>
+              <a href="https://urjoydrop.apg-official.site/" target="_blank" rel="noopener noreferrer" class="platform-mini-link">
+                Launch Site &#x2197;
+              </a>
+            </div>
+
+            <div class="platform-mini-card card-cineportal">
+              <div class="platform-mini-info">
+                <h3>cineportal</h3>
+                <p>Global entertainment navigation connecting viewers to cinema, anime, manga, and streaming catalogs worldwide.</p>
+              </div>
+              <a href="https://cineportal.online/" target="_blank" rel="noopener noreferrer" class="platform-mini-link">
+                Launch Site &#x2197;
+              </a>
+            </div>
+
+            <div class="platform-mini-card card-promp-ts">
+              <div class="platform-mini-info">
+                <h3>promp-ts</h3>
+                <p>Curated visual inspiration gallery showcasing AI prompt aesthetics, reel modes, and creative generative direction.</p>
+              </div>
+              <a href="https://urprompts.apg-official.site/" target="_blank" rel="noopener noreferrer" class="platform-mini-link">
+                Launch Site &#x2197;
+              </a>
+            </div>
+          </div>
+
+          <p class="page-body-text" style="margin-bottom: 32px;">
+            Engineered with pure vanilla HTML, modern CSS, and lightweight JavaScript, our engineering emphasizes lightning-fast load times, seamless responsiveness across all screen sizes, and composed luxury design.
+          </p>
+
           <a href="../index.html" class="btn-hero-primary" style="display: inline-flex;">
             &larr; Return to Showcase
           </a>
@@ -69,6 +102,7 @@
     </section>
   </main>
 
+  <!-- Minimal Footer -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-brand">
@@ -77,5 +111,6 @@
       <p class="footer-copy">&copy; 2026 APG-official. All rights reserved.</p>
     </div>
   </footer>
+
 </body>
 </html>

@@ -4,64 +4,115 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact — APG-official</title>
+  <meta name="description" content="Get in touch with APG regarding web creations, collaborations, and platform inquiries.">
+  
+  <!-- Google Fonts: Plus Jakarta Sans, Playfair Display, and Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="../css/style.css">
 </head>
-<body class="skybloom-theme">
+<body class="botanical-theme">
+
+  <!-- Top Sticky Navigation Bar -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="../index.html" class="brand-logo" aria-label="APG-official home">
-        <svg class="brand-flower-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <circle cx="12" cy="12" r="3" fill="#5DA9FF"/>
-          <ellipse cx="12" cy="5" rx="2.5" ry="4" fill="#2B6CB0" opacity="0.85"/>
-          <ellipse cx="12" cy="19" rx="2.5" ry="4" fill="#2B6CB0" opacity="0.85"/>
-          <ellipse cx="5" cy="12" rx="4" ry="2.5" fill="#2B6CB0" opacity="0.85"/>
-          <ellipse cx="19" cy="12" rx="4" ry="2.5" fill="#2B6CB0" opacity="0.85"/>
-          <circle cx="7" cy="7" r="2.5" fill="#5DA9FF" opacity="0.75"/>
-          <circle cx="17" cy="7" r="2.5" fill="#5DA9FF" opacity="0.75"/>
-          <circle cx="7" cy="17" r="2.5" fill="#5DA9FF" opacity="0.75"/>
-          <circle cx="17" cy="17" r="2.5" fill="#5DA9FF" opacity="0.75"/>
+        <svg class="brand-leaf-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M12 2C6.48 2 2 6.48 2 12c0 5.52 4.48 10 10 10 3.86 0 7.21-2.19 8.91-5.41L12 12V2z" fill="#4B8B67" opacity="0.9"/>
+          <path d="M12 2c5.52 0 10 4.48 10 10 0 1.64-.4 3.19-1.09 4.59L12 12V2z" fill="#D4AF83"/>
+          <path d="M12 12l8.91 4.59C19.78 19.38 16.14 22 12 22v-10z" fill="#2E5C42"/>
         </svg>
         <span class="brand-text">APG-official</span>
       </a>
+
       <nav class="nav-links" aria-label="Main Navigation">
         <a href="../index.html" class="nav-item">Home</a>
         <a href="../index.html#gallery" class="nav-item">Projects</a>
         <a href="../about/" class="nav-item">About</a>
         <a href="../contact/" class="nav-item active">Contact</a>
       </nav>
+
       <div class="header-action">
         <a href="../contact/" class="btn-connect">Let's Connect &#x2197;</a>
       </div>
     </div>
   </header>
 
+  <!-- Main Content Canvas -->
   <main>
-    <section class="story-section" style="padding-top: 70px; padding-bottom: 90px;">
-      <div class="container" style="max-width: 820px;">
-        <div class="section-eyebrow">GET IN TOUCH</div>
-        <h1 class="story-heading" style="font-size: 3rem; margin-bottom: 16px;">
-          Connect with APG
-        </h1>
-        <p class="story-desc" style="font-size: 1.15rem; color: var(--sky-deep); margin-bottom: 28px;">
-          Inquiries, collaboration opportunities, and feedback regarding APG web creations.
-        </p>
-        
-        <div style="background: #FFFFFF; border: 1px solid var(--border-card); border-radius: var(--radius-card); padding: 36px; box-shadow: var(--shadow-card); line-height: 1.8;">
-          <p style="margin-bottom: 24px; color: var(--text-body); font-size: 1.05rem;">
-            Whether you have questions about our web platforms or want to discuss creative collaborations, feel free to get in touch.
+    <section class="page-hero" aria-labelledby="contact-title">
+      <div class="container page-container">
+        <div class="page-card">
+          <div class="section-eyebrow">GET IN TOUCH</div>
+          <h1 id="contact-title" class="page-title">
+            Connect with APG
+          </h1>
+          <p class="page-subtitle">
+            Direct communication, creative inquiries, and collaboration opportunities.
           </p>
 
-          <div style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 32px;">
-            <div style="display: flex; align-items: center; gap: 12px; font-size: 1.05rem;">
-              <span style="font-weight: 700; color: var(--sky-deep); min-width: 80px;">Email:</span>
-              <a href="mailto:contact@apg-official.com" style="color: var(--text-heading); text-decoration: underline; text-underline-offset: 3px;">contact@apg-official.com</a>
+          <p class="page-body-text">
+            Whether you are curious about how these web applications were architected, have feedback, or wish to explore a collaboration, we would love to hear from you.
+          </p>
+
+          <!-- Contact Cards Grid -->
+          <div class="contact-grid">
+            <div class="contact-card-item">
+              <div class="contact-icon-bubble">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="4" width="20" height="16" rx="2"/>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                </svg>
+              </div>
+              <div>
+                <div class="contact-detail-label">Email Inquiries</div>
+                <div class="contact-detail-val">
+                  <a href="mailto:contact@apg-official.com">contact@apg-official.com</a>
+                </div>
+              </div>
             </div>
-            <div style="display: flex; align-items: center; gap: 12px; font-size: 1.05rem;">
-              <span style="font-weight: 700; color: var(--sky-deep); min-width: 80px;">GitHub:</span>
-              <span style="color: var(--text-heading);">github.com/pavan-aitagoni</span>
+
+            <div class="contact-card-item">
+              <div class="contact-icon-bubble">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                </svg>
+              </div>
+              <div>
+                <div class="contact-detail-label">GitHub Repository</div>
+                <div class="contact-detail-val">
+                  <a href="https://github.com/pavan-aitagoni" target="_blank" rel="noopener noreferrer">github.com/pavan-aitagoni</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-card-item">
+              <div class="contact-icon-bubble">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/>
+                  <line x1="2" y1="12" x2="22" y2="12"/>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                </svg>
+              </div>
+              <div>
+                <div class="contact-detail-label">Active Portfolio</div>
+                <div class="contact-detail-val">3 Live Web Applications</div>
+              </div>
+            </div>
+
+            <div class="contact-card-item">
+              <div class="contact-icon-bubble">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="9"/>
+                  <path d="m15.5 8.5-2.5 5.5-5.5 2.5 2.5-5.5z"/>
+                </svg>
+              </div>
+              <div>
+                <div class="contact-detail-label">Availability</div>
+                <div class="contact-detail-val">Open for Collaborations</div>
+              </div>
             </div>
           </div>
 
@@ -73,6 +124,7 @@
     </section>
   </main>
 
+  <!-- Minimal Footer -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-brand">
@@ -81,5 +133,6 @@
       <p class="footer-copy">&copy; 2026 APG-official. All rights reserved.</p>
     </div>
   </footer>
+
 </body>
 </html>
