@@ -284,12 +284,12 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  /* Dark forest overlay on the left to ensure high readability while leaving right leaves vivid */
+  /* Subtle soft overlay on the left for contrast while displaying clean two-tone background */
   background: linear-gradient(
     90deg, 
-    rgba(15, 40, 30, 0.95) 0%, 
-    rgba(15, 40, 30, 0.82) 42%, 
-    rgba(15, 40, 30, 0.2) 75%, 
+    rgba(15, 40, 30, 0.78) 0%, 
+    rgba(15, 40, 30, 0.45) 45%, 
+    rgba(15, 40, 30, 0.05) 70%, 
     transparent 100%
   );
 }
