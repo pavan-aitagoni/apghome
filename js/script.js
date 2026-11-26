@@ -91,7 +91,7 @@ function handleImageError(imgElement, title) {
  */
 function createCardElement(site) {
   const card = document.createElement('article');
-  card.className = 'card';
+  card.className = `card card-${site.id}`;
   card.setAttribute('data-id', site.id);
 
   // 16:10 Thumbnail container with clean fallback handling

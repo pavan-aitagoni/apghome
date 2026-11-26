@@ -1,59 +1,80 @@
 /* ==========================================================================
-   Skybloom APG-official — Nature Portfolio & Web Showcase Theme
-   Inspired by Skybloom Nature Portfolio: Ethereal skies, meadows, and elegant typography
-   Palette: #2B6CB0 (Deep Sky), #5DA9FF (Azure), #CFE9FF (Cloud Blue), #F8FAFC (Porcelain), #A8C97A (Meadow Green)
+   APG-official — Botanical Earth Luxury Portfolio & Web Showcase Theme
+   Inspired by Botanical Luxury: Deep forest greens, warm terracotta clay,
+   golden amber, fine typography, and tactile organic surfaces.
+   Palette: #0F281E (Deep Forest), #16392B (Forest Mid), #8C5139 (Terracotta),
+            #DFBF99 (Golden Sand), #CAD8CF (Pale Sage), #F7F4EF (Porcelain)
    ========================================================================== */
 
 /* --- Design Tokens & Palette --- */
 :root {
-  /* Exact Skybloom Palette */
-  --sky-deep: #2B6CB0;
-  --sky-vivid: #5DA9FF;
-  --sky-soft: #CFE9FF;
-  --sky-white: #F8FAFC;
-  --nature-green: #A8C97A;
-  --nature-green-dark: #8BAF5B;
+  /* Botanical Forest Palette */
+  --forest-black: #08160F;
+  --forest-deep: #0F281E;
+  --forest-base: #16392B;
+  --forest-mid: #1E4937;
+  --forest-light: #2B5E47;
+  
+  /* Earthy Terracotta & Cinnamon Palette */
+  --clay-terracotta: #8C5139;
+  --clay-deep: #5E3322;
+  --clay-dark: #3F2115;
+  --clay-light: #AD684B;
 
-  /* Neutrals & Surfaces */
-  --surface-page: #F8FAFC;
-  --surface-card: #FFFFFF;
-  --surface-card-subtle: #F1F7FD;
-  --surface-pill: rgba(255, 255, 255, 0.85);
+  /* Golden Sand & Amber Accents */
+  --sand-gold: #DFBF99;
+  --sand-gold-hover: #ECDBBF;
+  --sand-deep: #B58B5C;
+  --sand-cream: #F5EDE4;
+  --sand-porcelain: #F7F4EF;
+
+  /* Sage & Eucalyptus Tones */
+  --sage-green: #3D6E53;
+  --sage-dark: #274A37;
+  --sage-light: #5A9573;
+  --sage-mint: #CAD8CF;
+
+  /* Surfaces & Backgrounds */
+  --surface-page: #0F281E;
+  --surface-capsule: rgba(22, 57, 43, 0.88);
+  --surface-card-default: #173B2C;
+  --surface-pill: rgba(255, 255, 255, 0.12);
 
   /* Typography Colors */
-  --text-heading: #163252;
-  --text-body: #4A627E;
-  --text-muted: #7E95AD;
-  --text-accent: #2B6CB0;
+  --text-primary: #F7F4EF;
+  --text-secondary: #CAD8CF;
+  --text-muted: #8EAFA0;
+  --text-accent: #DFBF99;
 
   /* Hairlines & Borders */
-  --border-card: rgba(207, 233, 255, 0.75);
-  --border-focus: #5DA9FF;
+  --border-subtle: rgba(223, 191, 153, 0.18);
+  --border-card: rgba(223, 191, 153, 0.22);
+  --border-focus: #DFBF99;
 
-  /* Button Gradient Palette */
-  --btn-gradient: linear-gradient(135deg, #2B6CB0 0%, #5DA9FF 100%);
-  --btn-gradient-hover: linear-gradient(135deg, #225791 0%, #4797ED 100%);
-  --btn-gradient-active: linear-gradient(135deg, #1C4878 0%, #3D88DC 100%);
-  --btn-shadow: 0 6px 18px rgba(43, 108, 176, 0.28);
-  --btn-shadow-hover: 0 10px 24px rgba(43, 108, 176, 0.38);
+  /* Golden Sand Pill Button */
+  --btn-sand-gradient: linear-gradient(135deg, #E6CBB1 0%, #D2A87F 100%);
+  --btn-sand-hover: linear-gradient(135deg, #F0D9C2 0%, #DCB48D 100%);
+  --btn-sand-active: linear-gradient(135deg, #D4B294 0%, #C3976C 100%);
+  --btn-sand-text: #112A1C;
+  --btn-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  --btn-shadow-hover: 0 10px 28px rgba(0, 0, 0, 0.45);
 
-  /* Elevated Shadows */
-  --shadow-card: 0 14px 36px rgba(43, 108, 176, 0.08), 0 2px 8px rgba(43, 108, 176, 0.04);
-  --shadow-card-hover: 0 22px 48px rgba(43, 108, 176, 0.14), 0 4px 14px rgba(43, 108, 176, 0.06);
+  /* Shadows */
+  --shadow-card: 0 16px 36px rgba(4, 14, 9, 0.4);
+  --shadow-card-hover: 0 24px 48px rgba(4, 14, 9, 0.6);
 
-  /* Typography */
-  --font-serif: 'Playfair Display', Georgia, serif;
-  --font-script: 'Alex Brush', cursive;
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  /* Typography Pairing */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
   /* Layout Metrics */
   --max-width: 1200px;
   --container-padding: 24px;
-  --radius-card: 20px;
+  --radius-card: 22px;
   --radius-pill: 9999px;
   --radius-thumb: 12px;
 
-  /* Subtle Transitions */
+  /* Transitions */
   --transition-fast: 0.18s ease;
   --transition-normal: 0.28s ease-in-out;
 }
@@ -71,10 +92,10 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
-body.skybloom-theme {
+body.botanical-theme {
   font-family: var(--font-sans);
   background-color: var(--surface-page);
-  color: var(--text-body);
+  color: var(--text-secondary);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -103,13 +124,14 @@ a {
   text-decoration: none;
 }
 
-:focus-visible {
-  outline: 2px solid var(--sky-vivid);
-  outline-offset: 2px;
-}
-
-[hidden] {
-  display: none !important;
+/* --- Common Container --- */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
 }
 
 .visually-hidden {
@@ -124,26 +146,18 @@ a {
   border: 0;
 }
 
-/* --- Shared Layout Container --- */
-.container {
-  width: 100%;
-  max-width: var(--max-width);
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: var(--container-padding);
-  padding-right: var(--container-padding);
-}
-
-/* --- Top Sticky Navigation Bar (Glassmorphic) --- */
+/* ==========================================================================
+   Header & Navigation
+   ========================================================================== */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: rgba(255, 255, 255, 0.82);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(207, 233, 255, 0.6);
-  transition: background-color var(--transition-normal);
+  background-color: rgba(15, 40, 30, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(223, 191, 153, 0.15);
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
 }
 
 .header-inner {
@@ -157,106 +171,99 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 10px;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: opacity var(--transition-fast);
 }
 
-.brand-flower-icon {
-  width: 26px;
-  height: 26px;
+.brand-logo:hover {
+  opacity: 0.9;
+}
+
+.brand-leaf-icon {
+  width: 28px;
+  height: 28px;
   flex-shrink: 0;
-  transition: transform var(--transition-fast);
-}
-
-.brand-logo:hover .brand-flower-icon {
-  transform: rotate(25deg);
 }
 
 .brand-text {
-  font-family: var(--font-serif);
-  font-size: 1.35rem;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
   font-weight: 700;
-  color: var(--text-heading);
   letter-spacing: -0.01em;
-}
-
-.brand-sub {
-  font-family: var(--font-sans);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: var(--sky-deep);
-  background: var(--sky-soft);
-  padding: 2px 7px;
-  border-radius: var(--radius-pill);
-  margin-left: 4px;
+  color: var(--text-primary);
 }
 
 .nav-links {
   display: flex;
   align-items: center;
   gap: 8px;
+  background-color: rgba(22, 57, 43, 0.6);
+  padding: 4px 6px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(223, 191, 153, 0.15);
 }
 
 .nav-item {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 38px;
-  padding: 0 16px;
-  font-size: 0.92rem;
-  font-weight: 500;
-  color: var(--text-heading);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  padding: 6px 16px;
   border-radius: var(--radius-pill);
   transition: color var(--transition-fast), background-color var(--transition-fast);
 }
 
-.nav-item:hover,
+.nav-item:hover {
+  color: var(--text-primary);
+  background-color: rgba(223, 191, 153, 0.1);
+}
+
 .nav-item.active {
-  color: var(--sky-deep);
-  background-color: rgba(207, 233, 255, 0.45);
+  color: var(--btn-sand-text);
+  background-color: var(--sand-gold);
+  font-weight: 700;
 }
 
-.header-action {
-  display: flex;
-  align-items: center;
-}
-
-.btn-connect {
+.header-action .btn-connect {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 40px;
+  height: 40px;
   padding: 0 20px;
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: #ffffff;
-  background: var(--btn-gradient);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--btn-sand-text);
+  background: var(--btn-sand-gradient);
   border-radius: var(--radius-pill);
-  box-shadow: 0 4px 14px rgba(43, 108, 176, 0.25);
-  transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
-.btn-connect:hover {
-  background: var(--btn-gradient-hover);
-  box-shadow: var(--btn-shadow);
+.header-action .btn-connect:hover {
+  background: var(--btn-sand-hover);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
   transform: translateY(-1px);
 }
 
-/* --- Hero Section (Atmospheric Nature Sky) --- */
+/* ==========================================================================
+   Hero Section (Botanical Luxury)
+   ========================================================================== */
 .hero-section {
   position: relative;
   min-height: 580px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow: hidden;
   padding-top: 60px;
   padding-bottom: 90px;
-  overflow: hidden;
-  background-color: #BBE0FF;
+  background-color: var(--forest-deep);
 }
 
 .hero-bg-container {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   z-index: 1;
@@ -267,13 +274,24 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 30%;
+  object-position: center right;
+  display: block;
 }
 
 .hero-overlay {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, rgba(240, 247, 255, 0.92) 0%, rgba(240, 247, 255, 0.8) 45%, rgba(240, 247, 255, 0.2) 100%);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Dark forest overlay on the left to ensure high readability while leaving right leaves vivid */
+  background: linear-gradient(
+    90deg, 
+    rgba(15, 40, 30, 0.95) 0%, 
+    rgba(15, 40, 30, 0.82) 42%, 
+    rgba(15, 40, 30, 0.2) 75%, 
+    transparent 100%
+  );
 }
 
 .hero-inner {
@@ -282,7 +300,7 @@ a {
 }
 
 .hero-content {
-  max-width: 620px;
+  max-width: 600px;
 }
 
 .hero-eyebrow {
@@ -295,43 +313,38 @@ a {
 .eyebrow-text {
   font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 0.16em;
-  color: var(--sky-deep);
+  letter-spacing: 0.18em;
+  color: var(--sand-gold);
   text-transform: uppercase;
 }
 
 .eyebrow-line {
   width: 44px;
   height: 1.5px;
-  background: var(--sky-deep);
+  background: var(--sand-gold);
   opacity: 0.6;
 }
 
 .hero-heading {
-  font-family: var(--font-serif);
-  font-size: 3.6rem;
+  font-family: var(--font-display);
+  font-size: 3.5rem;
   font-weight: 700;
-  color: var(--text-heading);
+  color: var(--text-primary);
   line-height: 1.12;
   letter-spacing: -0.025em;
   margin-bottom: 18px;
 }
 
-.script-accent {
-  font-family: var(--font-script);
-  font-weight: 400;
-  font-size: 4.8rem;
-  color: var(--sky-deep);
+.hero-accent {
+  color: var(--sand-gold);
   display: inline-block;
-  line-height: 0.85;
-  margin-left: 6px;
 }
 
 .hero-subtitle {
-  font-size: 1.1rem;
+  font-size: 1.08rem;
   line-height: 1.65;
-  color: var(--text-body);
-  margin-bottom: 32px;
+  color: var(--text-secondary);
+  margin-bottom: 34px;
   max-width: 520px;
 }
 
@@ -342,23 +355,25 @@ a {
   flex-wrap: wrap;
 }
 
+/* Sand Golden Pill Button (Inspired by "Heses Roge" in Mockup) */
 .btn-hero-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-height: 48px;
-  padding: 0 28px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: #ffffff;
-  background: var(--btn-gradient);
+  padding: 0 30px;
+  font-size: 0.96rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--btn-sand-text);
+  background: var(--btn-sand-gradient);
   border-radius: var(--radius-pill);
   box-shadow: var(--btn-shadow);
   transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .btn-hero-primary:hover {
-  background: var(--btn-gradient-hover);
+  background: var(--btn-sand-hover);
   box-shadow: var(--btn-shadow-hover);
   transform: translateY(-2px);
 }
@@ -371,17 +386,18 @@ a {
   padding: 0 22px;
   font-size: 0.95rem;
   font-weight: 600;
-  color: var(--text-heading);
-  background: rgba(255, 255, 255, 0.88);
+  color: var(--text-primary);
+  background: rgba(22, 57, 43, 0.7);
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(223, 191, 153, 0.25);
   border-radius: var(--radius-pill);
-  box-shadow: 0 4px 14px rgba(43, 108, 176, 0.1);
-  transition: background var(--transition-fast), transform var(--transition-fast);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  transition: background var(--transition-fast), transform var(--transition-fast), border-color var(--transition-fast);
 }
 
 .btn-hero-secondary:hover {
-  background: #ffffff;
+  background: rgba(30, 73, 55, 0.9);
+  border-color: var(--sand-gold);
   transform: translateY(-2px);
 }
 
@@ -389,8 +405,8 @@ a {
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: var(--sky-soft);
-  color: var(--sky-deep);
+  background: rgba(223, 191, 153, 0.2);
+  color: var(--sand-gold);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -404,7 +420,7 @@ a {
   bottom: -1px;
   left: 0;
   width: 100%;
-  height: 80px;
+  height: 60px;
   z-index: 3;
   pointer-events: none;
 }
@@ -415,22 +431,81 @@ a {
   display: block;
 }
 
-.section-eyebrow {
-  font-size: 0.76rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  color: var(--sky-deep);
-  text-transform: uppercase;
-  margin-bottom: 8px;
+/* ==========================================================================
+   Core Pillars Banner (Middle Capsule from Mockup)
+   ========================================================================== */
+.pillars-section {
+  padding: 10px 0 48px;
+  background-color: var(--forest-deep);
 }
 
-/* --- Featured Works Gallery Section --- */
+.pillars-capsule {
+  background: rgba(22, 57, 43, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(223, 191, 153, 0.22);
+  border-radius: 28px;
+  padding: 34px 38px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  box-shadow: 0 20px 48px rgba(4, 14, 9, 0.45);
+}
+
+.pillar-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.pillar-icon-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(223, 191, 153, 0.12);
+  border: 1.5px solid rgba(223, 191, 153, 0.35);
+  color: var(--sand-gold);
+  margin-bottom: 14px;
+  transition: transform var(--transition-fast), background var(--transition-fast);
+}
+
+.pillar-item:hover .pillar-icon-wrap {
+  transform: translateY(-2px);
+  background: rgba(223, 191, 153, 0.22);
+}
+
+.pillar-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.pillar-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.pillar-desc {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+  max-width: 230px;
+}
+
+/* ==========================================================================
+   Featured Works Gallery Section
+   ========================================================================== */
 .gallery-section {
-  padding-top: 48px;
-  padding-bottom: 80px;
-  background-color: #FFFFFF;
-  border-top: 1px solid rgba(207, 233, 255, 0.5);
-  border-bottom: 1px solid rgba(207, 233, 255, 0.5);
+  padding-top: 36px;
+  padding-bottom: 84px;
+  background-color: var(--forest-deep);
+  border-top: 1px solid rgba(223, 191, 153, 0.12);
 }
 
 .gallery-header-row {
@@ -441,18 +516,27 @@ a {
   margin-bottom: 36px;
 }
 
-.gallery-title {
-  font-family: var(--font-serif);
-  font-size: 2.4rem;
+.section-eyebrow {
+  font-size: 0.76rem;
   font-weight: 700;
-  color: var(--text-heading);
+  letter-spacing: 0.16em;
+  color: var(--sand-gold);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.gallery-title {
+  font-family: var(--font-display);
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
   letter-spacing: -0.02em;
   line-height: 1.2;
 }
 
 .gallery-subtitle {
   margin-top: 6px;
-  font-size: 1.02rem;
+  font-size: 1rem;
   color: var(--text-muted);
 }
 
@@ -473,7 +557,7 @@ a {
   left: 16px;
   width: 18px;
   height: 18px;
-  color: var(--sky-vivid);
+  color: var(--sand-gold);
   pointer-events: none;
 }
 
@@ -482,11 +566,11 @@ a {
   height: 48px;
   padding: 0 42px 0 46px;
   font-size: 0.92rem;
-  color: var(--text-heading);
-  background-color: var(--surface-card-subtle);
-  border: 1.5px solid var(--border-card);
+  color: var(--text-primary);
+  background-color: rgba(22, 57, 43, 0.7);
+  border: 1.5px solid rgba(223, 191, 153, 0.25);
   border-radius: var(--radius-pill);
-  box-shadow: inset 0 2px 4px rgba(43, 108, 176, 0.03);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
   transition: border-color var(--transition-fast), background-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
@@ -497,9 +581,9 @@ a {
 
 .search-input:focus {
   outline: none;
-  background-color: #FFFFFF;
-  border-color: var(--sky-vivid);
-  box-shadow: 0 0 0 4px rgba(93, 169, 255, 0.2);
+  background-color: rgba(26, 68, 51, 0.95);
+  border-color: var(--sand-gold);
+  box-shadow: 0 0 0 4px rgba(223, 191, 153, 0.2);
 }
 
 .search-clear-btn {
@@ -510,10 +594,10 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--sky-soft);
+  background: rgba(223, 191, 153, 0.2);
   border: none;
   border-radius: 50%;
-  color: var(--sky-deep);
+  color: var(--sand-gold);
   cursor: pointer;
   padding: 0;
   transition: background-color var(--transition-fast);
@@ -524,46 +608,60 @@ a {
   height: 12px;
 }
 
-.search-clear-btn:hover {
-  background-color: var(--sky-vivid);
-  color: #ffffff;
-}
-
-/* --- Gallery Grid & Showcase Cards --- */
+/* ==========================================================================
+   Gallery Grid & Cards (Botanical Earthy Tri-Color Tones)
+   ========================================================================== */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-  align-items: stretch;
+  gap: 24px;
 }
 
 .card {
+  position: relative;
   display: flex;
   flex-direction: column;
   height: 100%;
-  background-color: var(--surface-card);
-  border: 1px solid var(--border-card);
-  border-radius: var(--radius-card); /* 20px outer border radius */
-  box-shadow: var(--shadow-card);
+  border-radius: var(--radius-card);
   overflow: hidden;
-  transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
+  box-shadow: var(--shadow-card);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  border: 1px solid rgba(223, 191, 153, 0.2);
 }
 
 .card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-card-hover);
-  border-color: rgba(93, 169, 255, 0.5);
+  border-color: var(--sand-gold);
 }
 
-/* 16:10 Thumbnail Preview (Inset Padding with 10px Radius) */
+/* Card 1: Sage / Moss Green (URjoydrop) */
+.card-urjoydrop {
+  background: linear-gradient(165deg, #2A5641 0%, #193B2B 100%);
+  border-color: rgba(90, 160, 120, 0.3);
+}
+
+/* Card 2: Warm Terracotta / Chocolate (cineportal) */
+.card-cineportal {
+  background: linear-gradient(165deg, #5C3524 0%, #3D2014 100%);
+  border-color: rgba(180, 110, 80, 0.3);
+}
+
+/* Card 3: Caramel / Cinnamon (promp-ts) */
+.card-promp-ts {
+  background: linear-gradient(165deg, #6E4E35 0%, #4A311F 100%);
+  border-color: rgba(200, 145, 95, 0.3);
+}
+
+/* 16:10 Thumbnail Preview (Inset with 10px Radius) */
 .card-thumbnail-wrap {
   position: relative;
   margin: 16px 16px 0 16px;
   aspect-ratio: 16 / 10;
   overflow: hidden;
-  border-radius: 10px; /* 10px inner image radius */
-  background-color: var(--surface-card-subtle);
-  border: 1px solid rgba(207, 233, 255, 0.6);
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .card-thumbnail {
@@ -588,8 +686,8 @@ a {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: linear-gradient(135deg, #CFE9FF 0%, #E8F3FF 100%);
-  color: var(--sky-deep);
+  background: rgba(0, 0, 0, 0.3);
+  color: var(--sand-gold);
   font-size: 0.88rem;
   font-weight: 600;
   text-align: center;
@@ -599,7 +697,7 @@ a {
 .card-thumbnail-fallback svg {
   width: 28px;
   height: 28px;
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 /* Card Body Content */
@@ -607,14 +705,14 @@ a {
   display: flex;
   flex-direction: column;
   flex: 1 0 auto;
-  padding: 20px 20px 20px;
+  padding: 20px 20px 22px;
 }
 
 .card-title {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: 1.35rem;
   font-weight: 700;
-  color: var(--text-heading);
+  color: var(--text-primary);
   line-height: 1.25;
   letter-spacing: -0.015em;
   margin-bottom: 4px;
@@ -622,7 +720,7 @@ a {
 
 .card-domain {
   font-size: 0.84rem;
-  color: var(--sky-deep);
+  color: var(--sand-gold);
   font-weight: 600;
   letter-spacing: 0.01em;
   display: inline-flex;
@@ -634,14 +732,14 @@ a {
 .card-domain-icon {
   width: 13px;
   height: 13px;
-  color: var(--sky-vivid);
+  color: var(--sand-gold);
   flex-shrink: 0;
 }
 
 .card-desc {
-  font-size: 0.92rem;
-  line-height: 1.6;
-  color: var(--text-body);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--text-secondary);
   margin-bottom: 22px;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -650,7 +748,7 @@ a {
   text-overflow: ellipsis;
 }
 
-/* Card Footer & Gradient Action Button */
+/* Card Footer & Golden Sand Action Button */
 .card-footer {
   margin-top: auto;
 }
@@ -663,10 +761,10 @@ a {
   min-height: 44px;
   padding: 11px 20px;
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.015em;
-  color: #ffffff;
-  background: var(--btn-gradient);
+  color: var(--btn-sand-text);
+  background: var(--btn-sand-gradient);
   border: none;
   border-radius: var(--radius-pill);
   text-decoration: none;
@@ -676,13 +774,13 @@ a {
 }
 
 .card-cta:hover {
-  background: var(--btn-gradient-hover);
+  background: var(--btn-sand-hover);
   box-shadow: var(--btn-shadow-hover);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
 }
 
 .card-cta:active {
-  background: var(--btn-gradient-active);
+  background: var(--btn-sand-active);
   transform: translateY(0);
 }
 
@@ -708,8 +806,8 @@ a {
   margin: 0 auto;
   text-align: center;
   padding: 40px 28px;
-  background-color: var(--surface-card);
-  border: 1px solid var(--border-card);
+  background-color: var(--surface-card-default);
+  border: 1px solid rgba(223, 191, 153, 0.25);
   border-radius: var(--radius-card);
   box-shadow: var(--shadow-card);
 }
@@ -721,8 +819,8 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--sky-vivid);
-  background: var(--sky-soft);
+  color: var(--sand-gold);
+  background: rgba(223, 191, 153, 0.12);
   border-radius: 50%;
 }
 
@@ -732,16 +830,16 @@ a {
 }
 
 .empty-state-title {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: 1.35rem;
   font-weight: 700;
-  color: var(--text-heading);
+  color: var(--text-primary);
   margin-bottom: 8px;
 }
 
 .empty-state-desc {
   font-size: 0.94rem;
-  color: var(--text-muted);
+  color: var(--text-secondary);
   line-height: 1.55;
   margin-bottom: 22px;
 }
@@ -753,9 +851,9 @@ a {
   min-height: 42px;
   padding: 0 24px;
   font-size: 0.9rem;
-  font-weight: 600;
-  color: #ffffff;
-  background: var(--btn-gradient);
+  font-weight: 700;
+  color: var(--btn-sand-text);
+  background: var(--btn-sand-gradient);
   border: none;
   border-radius: var(--radius-pill);
   cursor: pointer;
@@ -764,7 +862,7 @@ a {
 }
 
 .btn-clear-search:hover {
-  background: var(--btn-gradient-hover);
+  background: var(--btn-sand-hover);
   box-shadow: var(--btn-shadow-hover);
   transform: translateY(-1px);
 }
@@ -772,8 +870,8 @@ a {
 /* --- Minimal Footer --- */
 .site-footer {
   margin-top: auto;
-  background-color: #FFFFFF;
-  border-top: 1px solid rgba(207, 233, 255, 0.6);
+  background-color: var(--forest-black);
+  border-top: 1px solid rgba(223, 191, 153, 0.12);
 }
 
 .footer-inner {
@@ -785,6 +883,7 @@ a {
 
 .footer-brand .brand-text {
   font-size: 1.05rem;
+  color: var(--text-primary);
 }
 
 .footer-copy {
@@ -802,8 +901,10 @@ a {
     font-size: 2.8rem;
   }
 
-  .script-accent {
-    font-size: 3.8rem;
+  .pillars-capsule {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    padding: 28px;
   }
 
   .gallery-grid {
@@ -834,7 +935,7 @@ a {
   }
 
   .nav-links {
-    display: none; /* Mobile simplicity */
+    display: none; /* Minimal mobile header */
   }
 
   .hero-section {
@@ -843,15 +944,17 @@ a {
     min-height: auto;
   }
 
-  .hero-heading {
-    font-size: 2.1rem;
+  .hero-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(15, 40, 30, 0.94) 0%,
+      rgba(15, 40, 30, 0.85) 55%,
+      rgba(15, 40, 30, 0.98) 100%
+    );
   }
 
-  .script-accent {
-    font-size: 3rem;
-    display: block;
-    margin-left: 0;
-    margin-top: 4px;
+  .hero-heading {
+    font-size: 2.2rem;
   }
 
   .hero-subtitle {
@@ -859,8 +962,40 @@ a {
     margin-bottom: 24px;
   }
 
+  .pillars-section {
+    padding: 0 0 32px;
+  }
+
+  .pillars-capsule {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 20px 14px;
+    border-radius: 20px;
+  }
+
+  .pillar-icon-wrap {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 8px;
+  }
+
+  .pillar-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .pillar-title {
+    font-size: 0.88rem;
+    margin-bottom: 3px;
+  }
+
+  .pillar-desc {
+    font-size: 0.72rem;
+    line-height: 1.35;
+  }
+
   .gallery-section {
-    padding-top: 36px;
+    padding-top: 32px;
     padding-bottom: 60px;
   }
 
@@ -880,7 +1015,7 @@ a {
 
   .card {
     border-radius: 16px;
-    box-shadow: 8px 8px 24px #bebebe, -8px -8px 24px #ffffff;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
   }
 
   .card-thumbnail-wrap {
