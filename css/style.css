@@ -317,7 +317,7 @@ MIT License, Copyright (c) Codewithvinay (Anonymous)
   height: 100%;
   background-color: var(--surface-card);
   border: 1px solid var(--slate-steel-border);
-  border-radius: 50px;
+  border-radius: 10px;
   box-shadow: 20px 20px 60px #071322,
              -20px -20px 60px #1b3c69;
   overflow: hidden;
@@ -334,11 +334,12 @@ MIT License, Copyright (c) Codewithvinay (Anonymous)
 /* Thumbnail 16:10 Container */
 .card-thumbnail-wrap {
   position: relative;
-  width: 100%;
+  margin: 18px 18px 0 18px;
   aspect-ratio: 16 / 10;
   overflow: hidden;
+  border-radius: 10px;
   background-color: var(--surface-card-subtle);
-  border-bottom: 1px solid var(--slate-steel-border);
+  border: 1px solid var(--slate-steel-border);
 }
 
 .card-thumbnail {
@@ -346,6 +347,7 @@ MIT License, Copyright (c) Codewithvinay (Anonymous)
   height: 100%;
   object-fit: cover;
   object-position: top center;
+  border-radius: 10px;
   display: block;
   transition: transform 0.28s ease;
 }
@@ -382,7 +384,7 @@ MIT License, Copyright (c) Codewithvinay (Anonymous)
   display: flex;
   flex-direction: column;
   flex: 1 0 auto;
-  padding: 24px 28px 28px;
+  padding: 18px 18px 18px;
 }
 
 .card-title {
@@ -630,8 +632,12 @@ MIT License, Copyright (c) Codewithvinay (Anonymous)
     gap: 18px;
   }
 
+  .card-thumbnail-wrap {
+    margin: 16px 16px 0 16px;
+  }
+
   .card-body {
-    padding: 22px 24px 26px;
+    padding: 16px 16px 18px;
   }
 
   .card-cta {
