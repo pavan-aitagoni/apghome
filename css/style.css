@@ -256,8 +256,9 @@ a {
   justify-content: center;
   overflow: hidden;
   padding-top: 60px;
-  padding-bottom: 90px;
+  padding-bottom: 70px;
   background-color: var(--forest-deep);
+  border-bottom: 1px solid rgba(223, 191, 153, 0.18);
 }
 
 .hero-bg-container {
@@ -270,12 +271,17 @@ a {
   overflow: hidden;
 }
 
-.hero-bg-img {
+/* Mathematically perfect, razor-sharp two-tone diagonal background (Forest Green & Terracotta Brown) */
+.hero-two-tone-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center right;
-  display: block;
+  background: 
+    radial-gradient(circle at 82% 35%, rgba(255, 195, 150, 0.16) 0%, transparent 50%),
+    radial-gradient(circle at 20% 50%, rgba(0, 0, 0, 0.25) 0%, transparent 60%),
+    linear-gradient(116deg, #133425 0%, #133425 calc(51% - 0.5px), #895139 calc(51% + 0.5px), #895139 100%);
 }
 
 .hero-overlay {
@@ -284,13 +290,12 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  /* Subtle soft overlay on the left for contrast while displaying clean two-tone background */
+  pointer-events: none;
   background: linear-gradient(
     90deg, 
-    rgba(15, 40, 30, 0.78) 0%, 
-    rgba(15, 40, 30, 0.45) 45%, 
-    rgba(15, 40, 30, 0.05) 70%, 
-    transparent 100%
+    rgba(15, 40, 30, 0.35) 0%, 
+    rgba(15, 40, 30, 0.1) 35%, 
+    transparent 60%
   );
 }
 
@@ -414,21 +419,6 @@ a {
   padding-left: 2px;
 }
 
-/* Hero Wave Divider */
-.hero-wave-divider {
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  width: 100%;
-  height: 60px;
-  z-index: 3;
-  pointer-events: none;
-}
-
-.hero-wave-divider svg {
-  width: 100%;
-  height: 100%;
-  display: block;
 }
 
 /* ==========================================================================
@@ -1050,26 +1040,45 @@ a {
 
   .hero-section {
     padding-top: 36px;
-    padding-bottom: 60px;
+    padding-bottom: 50px;
     min-height: auto;
+  }
+
+  /* Clear brown and green split in mobile view */
+  .hero-two-tone-bg {
+    background: 
+      radial-gradient(circle at 85% 25%, rgba(255, 195, 150, 0.15) 0%, transparent 45%),
+      linear-gradient(124deg, #133425 0%, #133425 calc(52% - 0.5px), #895139 calc(52% + 0.5px), #895139 100%);
   }
 
   .hero-overlay {
     background: linear-gradient(
-      180deg,
-      rgba(15, 40, 30, 0.94) 0%,
-      rgba(15, 40, 30, 0.85) 55%,
-      rgba(15, 40, 30, 0.98) 100%
+      90deg,
+      rgba(15, 40, 30, 0.4) 0%,
+      rgba(15, 40, 30, 0.1) 40%,
+      transparent 70%
     );
   }
 
+  .hero-content {
+    max-width: 250px;
+  }
+
   .hero-heading {
-    font-size: 2.2rem;
+    font-size: 2.1rem;
+    line-height: 1.15;
   }
 
   .hero-subtitle {
-    font-size: 0.98rem;
-    margin-bottom: 24px;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    margin-bottom: 22px;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
   }
 
   .page-hero {
