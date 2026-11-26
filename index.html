@@ -3,80 +3,162 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>APG-official</title>
+  <title>APG-official — The Charm of Web Creations</title>
   <meta name="description" content="A curated collection of web projects, all in one place. Explore official web creations by APG.">
   
-  <!-- Google Fonts: Plus Jakarta Sans -->
+  <!-- Google Fonts: Playfair Display, Alex Brush, and Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
   
   <!-- Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-  <!-- Top Sticky Navigation Bar -->
+<body class="skybloom-theme">
+
+  <!-- Top Sticky Navigation Bar (Glassmorphic) -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="brand-logo" aria-label="APG-official home">
-        <span class="brand-text">APG-official</span>
+        <svg class="brand-flower-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="12" cy="12" r="3" fill="#5DA9FF"/>
+          <ellipse cx="12" cy="5" rx="2.5" ry="4" fill="#2B6CB0" opacity="0.85"/>
+          <ellipse cx="12" cy="19" rx="2.5" ry="4" fill="#2B6CB0" opacity="0.85"/>
+          <ellipse cx="5" cy="12" rx="4" ry="2.5" fill="#2B6CB0" opacity="0.85"/>
+          <ellipse cx="19" cy="12" rx="4" ry="2.5" fill="#2B6CB0" opacity="0.85"/>
+          <circle cx="7" cy="7" r="2.5" fill="#5DA9FF" opacity="0.75"/>
+          <circle cx="17" cy="7" r="2.5" fill="#5DA9FF" opacity="0.75"/>
+          <circle cx="7" cy="17" r="2.5" fill="#5DA9FF" opacity="0.75"/>
+          <circle cx="17" cy="17" r="2.5" fill="#5DA9FF" opacity="0.75"/>
+        </svg>
+        <span class="brand-text">Skybloom <span class="brand-sub">APG</span></span>
       </a>
+
       <nav class="nav-links" aria-label="Main Navigation">
-        <a href="./about/" class="nav-item">About</a>
-        <a href="./contact/" class="nav-item">Contact</a>
+        <a href="index.html" class="nav-item active">Home</a>
+        <a href="#gallery" class="nav-item">Work</a>
+        <a href="about/" class="nav-item">About</a>
+        <a href="contact/" class="nav-item">Contact</a>
       </nav>
+
+      <div class="header-action">
+        <a href="contact/" class="btn-connect">Let's Connect &#x2197;</a>
+      </div>
     </div>
   </header>
 
-  <!-- Main Content -->
+  <!-- Main Content Canvas -->
   <main>
-    <!-- Hero & Search Section -->
+    <!-- Hero Section (Atmospheric Nature Sky) -->
     <section class="hero-section" aria-labelledby="hero-title">
+      <div class="hero-bg-container" aria-hidden="true">
+        <img src="assets/hero-sky-bg.jpg" alt="" class="hero-bg-img" loading="eager">
+        <div class="hero-overlay"></div>
+      </div>
+
       <div class="container hero-inner">
         <div class="hero-content">
-          <h1 id="hero-title" class="hero-heading">Explore Web Creations</h1>
-          <p class="hero-subtitle">A curated collection of web projects, all in one place.</p>
-        </div>
-        
-        <div class="search-wrapper">
-          <div class="search-box">
-            <svg class="search-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M9 16A7 7 0 1 0 9 2a7 7 0 0 0 0 14Zm8 2-4.35-4.35" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <input 
-              type="text" 
-              id="search-input" 
-              class="search-input" 
-              placeholder="Search websites..." 
-              autocomplete="off"
-              spellcheck="false"  
-              aria-label="Search websites by title, domain, or description"
-            >
-            <button 
-              type="button" 
-              id="search-clear" 
-              class="search-clear-btn" 
-              aria-label="Clear search query"
-              hidden
-            >
-              <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
-              </svg>
-            </button>
+          <div class="hero-eyebrow">
+            <span class="eyebrow-text">NATURE &bull; WEB PORTFOLIO</span>
+            <span class="eyebrow-line"></span>
           </div>
+
+          <h1 id="hero-title" class="hero-heading">
+            The Charm<br>
+            of <span class="script-accent">Blue Skies</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            A visual journey through interactive web creations, thoughtful digital craftsmanship, and the quiet beauty of modern interfaces.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#gallery" class="btn-hero-primary">Explore Portfolio &rarr;</a>
+            <a href="#about-story" class="btn-hero-secondary">
+              <span class="play-icon-bubble">&#x25B6;</span>
+              <span>Our Story</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Organic Wave Transition Divider -->
+      <div class="hero-wave-divider" aria-hidden="true">
+        <svg viewBox="0 0 1440 120" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,45 C280,95 480,10 740,65 C1020,115 1260,25 1440,60 L1440,120 L0,120 Z" fill="#F8FAFC"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- Visual Storyteller Section (Inspired by Skybloom reference) -->
+    <section id="about-story" class="story-section">
+      <div class="container story-inner">
+        <div class="story-visuals">
+          <div class="story-card-large">
+            <img src="assets/urjoydrop.png" alt="Interactive digital creations preview" class="story-img">
+          </div>
+          <div class="story-card-floating">
+            <img src="assets/promp-ts.png" alt="Curated prompts preview" class="story-img">
+          </div>
+        </div>
+
+        <div class="story-copy">
+          <div class="section-eyebrow">ABOUT</div>
+          <h2 class="story-heading">A Visual Storyteller</h2>
+          <p class="story-desc">
+            Exploring the harmony between skies, earth, and nature through intentional web design and purposeful software engineering. Each project is crafted with care, clarity, and delight.
+          </p>
+          <a href="about/" class="story-link">Know More &rarr;</a>
         </div>
       </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section class="gallery-section" aria-label="Website Gallery">
+    <!-- Featured Works Gallery Section -->
+    <section id="gallery" class="gallery-section" aria-label="Website Gallery">
       <div class="container">
-        <!-- Live Count / Active Search Info (SR Only or Screen readers) -->
+        <!-- Gallery Header with Integrated Search -->
+        <div class="gallery-header-row">
+          <div class="gallery-header-left">
+            <div class="section-eyebrow">FEATURED WORKS</div>
+            <h2 class="gallery-title">Explore Web Creations</h2>
+            <p class="gallery-subtitle">A curated collection of web projects, all in one place.</p>
+          </div>
+
+          <div class="search-wrapper">
+            <div class="search-box">
+              <svg class="search-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M9 16A7 7 0 1 0 9 2a7 7 0 0 0 0 14Zm8 2-4.35-4.35" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <input 
+                type="text" 
+                id="search-input" 
+                class="search-input" 
+                placeholder="Search websites by name, domain, or description..." 
+                autocomplete="off"
+                spellcheck="false"
+                aria-label="Search websites by title, domain, or description"
+              >
+              <button 
+                type="button" 
+                id="search-clear" 
+                class="search-clear-btn" 
+                aria-label="Clear search query"
+                hidden
+              >
+                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Live Count / Active Search Info for Screen Readers -->
         <div id="results-count" class="visually-hidden" aria-live="polite"></div>
 
-        <!-- Cards Grid -->
+        <!-- Cards Grid (Dynamically Populated by js/script.js) -->
         <div id="gallery-grid" class="gallery-grid">
-          <!-- Dynamically populated by js/script.js -->
+          <!-- Populated by js/script.js -->
         </div>
 
         <!-- Empty State Container -->
@@ -89,18 +171,90 @@
                 <path d="M8.5 11h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
               </svg>
             </div>
-            <h2 class="empty-state-title">No matching websites found</h2>
-            <p class="empty-state-desc">No web creations match your search query. Try a different keyword or reset the filter.</p>
+            <h3 class="empty-state-title">No matching websites found</h3>
+            <p class="empty-state-desc">No web creations match your search query. Try checking for typos or resetting your search keyword.</p>
             <button type="button" id="empty-clear-btn" class="btn-clear-search">Clear search</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quote & Nature Banner Section -->
+    <section class="quote-section">
+      <div class="container quote-inner">
+        <blockquote class="quote-text">
+          <span class="quote-mark">&ldquo;</span>
+          Nature paints the skies for us, every single day.
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- Design System Spec Card (From Skybloom Reference) -->
+    <section class="spec-section">
+      <div class="container">
+        <div class="spec-card">
+          <div class="spec-col">
+            <div class="spec-label">COLOR PALETTE</div>
+            <div class="palette-swatches">
+              <div class="swatch-item">
+                <span class="swatch-block" style="background: #2B6CB0;"></span>
+                <span class="swatch-hex">#2B6CB0</span>
+              </div>
+              <div class="swatch-item">
+                <span class="swatch-block" style="background: #5DA9FF;"></span>
+                <span class="swatch-hex">#5DA9FF</span>
+              </div>
+              <div class="swatch-item">
+                <span class="swatch-block" style="background: #CFE9FF;"></span>
+                <span class="swatch-hex">#CFE9FF</span>
+              </div>
+              <div class="swatch-item">
+                <span class="swatch-block" style="background: #F8FAFC; border: 1px solid #E2E8F0;"></span>
+                <span class="swatch-hex">#F8FAFC</span>
+              </div>
+              <div class="swatch-item">
+                <span class="swatch-block" style="background: #A8C97A;"></span>
+                <span class="swatch-hex">#A8C97A</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="spec-col">
+            <div class="spec-label">TYPOGRAPHY</div>
+            <div class="typography-list">
+              <div class="typo-item">
+                <span class="typo-sample font-serif">Aa</span>
+                <span class="typo-name">Playfair Display <em>(Headings)</em></span>
+              </div>
+              <div class="typo-item">
+                <span class="typo-sample font-script">Aa</span>
+                <span class="typo-name">Alex Brush <em>(Accents)</em></span>
+              </div>
+              <div class="typo-item">
+                <span class="typo-sample font-sans">Aa</span>
+                <span class="typo-name">Inter <em>(Body &amp; UI)</em></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="spec-col">
+            <div class="spec-label">UI COMPONENTS</div>
+            <div class="spec-buttons">
+              <a href="#gallery" class="spec-btn-primary">Primary Button &rarr;</a>
+              <a href="about/" class="spec-btn-secondary">Secondary</a>
+            </div>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Minimal Footer -->
+  <!-- Minimal Nature Footer -->
   <footer class="site-footer">
     <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="brand-text">Skybloom APG-official</span>
+      </div>
       <p class="footer-copy">&copy; 2026 APG-official. All rights reserved.</p>
     </div>
   </footer>
