@@ -29,7 +29,7 @@
   /* Layout Metrics */
   --max-width: 1200px;
   --container-padding: 24px;
-  --radius-card: 10px;
+  --radius-card: 20px;
   --radius-button: 6px;
   --radius-input: 8px;
 
@@ -317,7 +317,7 @@ MIT License, Copyright (c) Codewithvinay (Anonymous)
   height: 100%;
   background-color: var(--surface-card);
   border: 1px solid var(--slate-steel-border);
-  border-radius: 10px;
+  border-radius: 20px;
   box-shadow: 20px 20px 60px #071322,
              -20px -20px 60px #1b3c69;
   overflow: hidden;

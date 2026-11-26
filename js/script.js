@@ -13,8 +13,8 @@ const websites = [
   {
     id: 'urjoydrop',
     title: 'URjoydrop',
-    domain: 'wishdrop-six.vercel.app',
-    url: 'https://wishdrop-six.vercel.app/',
+    domain: 'urjoydrop.apg-official.site',
+    url: 'https://urjoydrop.apg-official.site/',
     description: 'Create and share personalized interactive digital surprises and celebratory greeting experiences.',
     thumbnail: 'assets/urjoydrop.png'
   },
@@ -29,8 +29,8 @@ const websites = [
   {
     id: 'promp-ts',
     title: 'promp-ts',
-    domain: 'prompts-pearl.vercel.app',
-    url: 'https://prompts-pearl.vercel.app/',
+    domain: 'urprompts.apg-official.site',
+    url: 'https://urprompts.apg-official.site/',
     description: 'Explore a curated visual discovery gallery of AI image prompts, reel modes, and artistic styles.',
     thumbnail: 'assets/promp-ts.png'
   }

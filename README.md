@@ -8,13 +8,13 @@ Built using pure vanilla HTML5, CSS3, and JavaScript (zero frameworks, zero buil
 
 ## Featured Web Creations
 
-1. **URjoydrop** — [https://wishdrop-six.vercel.app/](https://wishdrop-six.vercel.app/)  
+1. **URjoydrop** — [https://urjoydrop.apg-official.site/](https://urjoydrop.apg-official.site/)  
    *Create and share personalized interactive digital surprises and celebratory greeting experiences.*
 
 2. **cineportal** — [https://cineportal.online/](https://cineportal.online/)  
    *Discover movie, anime, manga, and global entertainment streaming platforms worldwide.*
 
-3. **promp-ts** — [https://prompts-pearl.vercel.app/](https://prompts-pearl.vercel.app/)  
+3. **promp-ts** — [https://urprompts.apg-official.site/](https://urprompts.apg-official.site/)  
    *Explore a curated visual discovery gallery of AI image prompts, reel modes, and artistic styles.*
 
 ---
