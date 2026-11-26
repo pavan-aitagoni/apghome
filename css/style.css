@@ -307,20 +307,28 @@ a {
 }
 
 /* --- Website Card Component --- */
+/*
+From Uiverse.io by Codewithvinay - https://uiverse.io/Codewithvinay/orange-earwig-38
+MIT License, Copyright (c) Codewithvinay (Anonymous)
+*/
 .card {
   display: flex;
   flex-direction: column;
   height: 100%;
   background-color: var(--surface-card);
   border: 1px solid var(--slate-steel-border);
-  border-radius: var(--radius-card);
+  border-radius: 50px;
+  box-shadow: 20px 20px 60px #071322,
+             -20px -20px 60px #1b3c69;
   overflow: hidden;
-  transition: border-color var(--transition-normal), background-color var(--transition-normal);
+  transition: border-color var(--transition-normal), background-color var(--transition-normal), box-shadow var(--transition-normal);
 }
 
 .card:hover {
   background-color: var(--surface-card-hover);
   border-color: var(--slate-steel-hover);
+  box-shadow: 24px 24px 70px #050f1c,
+             -24px -24px 70px #204578;
 }
 
 /* Thumbnail 16:10 Container */
@@ -374,7 +382,7 @@ a {
   display: flex;
   flex-direction: column;
   flex: 1 0 auto;
-  padding: 22px 22px 20px;
+  padding: 24px 28px 28px;
 }
 
 .card-title {
@@ -623,7 +631,7 @@ a {
   }
 
   .card-body {
-    padding: 18px 18px 18px;
+    padding: 22px 24px 26px;
   }
 
   .card-cta {
